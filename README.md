@@ -57,14 +57,14 @@
 <ul>
         <li>Programming Languages: C#</li>
         <li>Frameworks & Libraries: .NET Windows Forms</li>
-        <li>Database: MySQL</li>
+        <li>Database: SQL Server</li>
 </ul>
 
 ### Web Forms:
 <ul>
         <li>Programming Languages: Java, Javascript</li>
         <li>Frameworks & Libraries: Spring, Thymeleaf, CSS Framework (Bootstrap)</li>
-        <li>Database: MySQL</li>
+        <li>Database: SQL Server</li>
 </ul>
 
 ### AI: Using Natural language processing (NLP) to make a chatbots
