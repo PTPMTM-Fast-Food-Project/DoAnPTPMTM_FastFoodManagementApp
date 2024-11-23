@@ -1,1 +1,201 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 17.25" name="FastFoodManagementDB">
+  <DataContextMoniker Name="/FastFoodManagementDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d473ce34-5424-437a-8c86-1e60e80005c9" absoluteBounds="9, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/admin_role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="216868b3-fbc8-4421-96c9-a394a8fd672c" absoluteBounds="9.015, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f275ad9-5aea-4744-8815-9b1129a24b91" absoluteBounds="6.25, 15, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24d77ab3-63c6-48f9-955e-48fb48f43a94" absoluteBounds="6.265, 15.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c0d2349-84ad-44ad-b223-f5bfb716466c" absoluteBounds="11.75, 4.625, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/cart_item" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25ed4cea-831e-4f1b-9359-5b25b5563af2" absoluteBounds="11.765, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49d9e97e-f44e-4b53-a6ac-692cf7569c89" absoluteBounds="6.25, 11.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b07c3932-9cc9-4ac5-80ef-cfbf5be48f12" absoluteBounds="6.265, 12.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fdd71b3e-a2a6-48db-afdf-543769d18b0b" absoluteBounds="3.5, 4.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/city" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8d319cc-7f2f-40e3-b260-2ebe31bf04aa" absoluteBounds="3.515, 5.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25a1eeb9-a3d5-4cda-8bb8-235d60682db2" absoluteBounds="9, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/customer_role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a2c7f42-c763-4bba-8cd9-4171313bc76b" absoluteBounds="9.015, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df0949fa-d01e-4cc9-a0e0-4660fb4d7edf" absoluteBounds="0.75, 4.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6309a8f-a3e4-40a8-a832-f05399a9e555" absoluteBounds="0.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b81778e5-a01f-4a7d-8d05-db88da53f88c" absoluteBounds="6.25, 4.125, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d016bb86-f7d1-40ad-b5a1-90d1d8a0091f" absoluteBounds="6.265, 4.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f49a8954-2378-419b-8965-466e5b378004" absoluteBounds="11.75, 7.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/order_detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e16e69ae-dc4e-48bb-9031-e418b63c660a" absoluteBounds="11.765, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ee0d0e3-c5e0-4ea8-8b54-f7fd3915aef6" absoluteBounds="9, 7.125, 2, 2.7324039713541683">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="311ae3a5-4d2b-4403-b12b-f924ab83f1c2" absoluteBounds="9.015, 7.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4987f15f-05f2-49fb-8e38-b1493002ac7a" absoluteBounds="9.25, 15.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/permission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6916f7ef-03f6-48b4-b0ea-db5da459efef" absoluteBounds="9.265, 16.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6da81c8-bd77-484a-a4d3-2237d3841037" absoluteBounds="9, 11.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be799797-bc09-4b11-b2ee-ce9a53ea63bc" absoluteBounds="9.015, 11.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="74b83dd8-f38a-4937-aebc-dcc9720190b8" absoluteBounds="12, 1.625, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/role_permission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0972f7be-3a3f-40bc-97cf-9b2eafee7a37" absoluteBounds="12.015, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd46413e-4412-474e-88ef-2b0d1783ae10" absoluteBounds="6.25, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24adaa26-c47a-4583-9f0a-ddba79f7083d" absoluteBounds="6.265, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac303962-db5c-4ecd-ab47-e70a00abd425" absoluteBounds="9, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/FastFoodManagementDBDataContext/shopping_cart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e16580d-be3a-4130-8454-2ea57036dd5a" absoluteBounds="9.015, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 15); (8.625 : 14.625); (8.625 : 1.34699625651042); (9 : 1.34699625651042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/admin/admin_admin_role" />
+      <nodes>
+        <classShapeMoniker Id="0f275ad9-5aea-4744-8815-9b1129a24b91" />
+        <classShapeMoniker Id="d473ce34-5424-437a-8c86-1e60e80005c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.34699625651042); (3.5 : 5.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/country/country_city" />
+      <nodes>
+        <classShapeMoniker Id="df0949fa-d01e-4cc9-a0e0-4660fb4d7edf" />
+        <classShapeMoniker Id="fdd71b3e-a2a6-48db-afdf-543769d18b0b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.18653746153846); (8.56607443490112 : 3.87046302663734 : JumpStart); (8.68392556509888 : 3.75261189643958 : JumpEnd); (8.8125 : 3.62403746153846); (8.8125 : 4.13240996880008); (9.00091745577925 : 3.94399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/customer/customer_customer_role" />
+      <nodes>
+        <classShapeMoniker Id="b81778e5-a01f-4a7d-8d05-db88da53f88c" />
+        <classShapeMoniker Id="25a1eeb9-a3d5-4cda-8bb8-235d60682db2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.31814697265625); (6.25 : 5.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/city/city_customer" />
+      <nodes>
+        <classShapeMoniker Id="fdd71b3e-a2a6-48db-afdf-543769d18b0b" />
+        <classShapeMoniker Id="b81778e5-a01f-4a7d-8d05-db88da53f88c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 8.44314697265625); (11.0729166666667 : 8.44314697265625 : JumpStart); (11.2395833333333 : 8.44314697265625 : JumpEnd); (11.2916666666667 : 8.44314697265625 : JumpStart); (11.4583333333333 : 8.44314697265625 : JumpEnd); (11.75 : 8.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/order/order_order_detail" />
+      <nodes>
+        <classShapeMoniker Id="7ee0d0e3-c5e0-4ea8-8b54-f7fd3915aef6" />
+        <classShapeMoniker Id="f49a8954-2378-419b-8965-466e5b378004" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 6.6651025390625); (7.25 : 8.49120198567708); (8.54166666666667 : 8.49120198567708 : JumpStart); (8.70833333333333 : 8.49120198567708 : JumpEnd); (9 : 8.49120198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/customer/customer_order" />
+      <nodes>
+        <classShapeMoniker Id="b81778e5-a01f-4a7d-8d05-db88da53f88c" />
+        <classShapeMoniker Id="7ee0d0e3-c5e0-4ea8-8b54-f7fd3915aef6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 11.125); (11.0973244349011 : 11.0276755650989 : JumpStart); (11.2151755650989 : 10.9098244349011 : JumpEnd); (11.375 : 10.75); (11.375 : 5.51044840494792); (11.75 : 5.51044840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/product/product_cart_item" />
+      <nodes>
+        <classShapeMoniker Id="f6da81c8-bd77-484a-a4d3-2237d3841037" />
+        <classShapeMoniker Id="4c0d2349-84ad-44ad-b223-f5bfb716466c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 12.5224544856771); (11.0729166666667 : 12.5224544856771 : JumpStart); (11.2395833333333 : 12.5224544856771 : JumpEnd); (12.75 : 12.5224544856771); (12.75 : 9.1362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/product/product_order_detail" />
+      <nodes>
+        <classShapeMoniker Id="f6da81c8-bd77-484a-a4d3-2237d3841037" />
+        <classShapeMoniker Id="f49a8954-2378-419b-8965-466e5b378004" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 12.5392976888021); (8.54166666666667 : 12.5392976888021 : JumpStart); (8.70833333333333 : 12.5392976888021 : JumpEnd); (9 : 12.5392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/category/category_product" />
+      <nodes>
+        <classShapeMoniker Id="49d9e97e-f44e-4b53-a6ac-692cf7569c89" />
+        <classShapeMoniker Id="f6da81c8-bd77-484a-a4d3-2237d3841037" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.15625 : 15.625); (11.15625 : 2.34699625651042); (12 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/permission/permission_role_permission" />
+      <nodes>
+        <classShapeMoniker Id="4987f15f-05f2-49fb-8e38-b1493002ac7a" />
+        <classShapeMoniker Id="74b83dd8-f38a-4937-aebc-dcc9720190b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 1.75); (7.25 : 1.47098778670873); (8.54166666666667 : 1.47098778670873 : JumpStart); (8.70833333333333 : 1.47098778670873 : JumpEnd); (9 : 1.47098778670873)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/role/role_admin_role" />
+      <nodes>
+        <classShapeMoniker Id="bd46413e-4412-474e-88ef-2b0d1783ae10" />
+        <classShapeMoniker Id="d473ce34-5424-437a-8c86-1e60e80005c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 2.94399251302083); (7.25 : 3.44399301302083); (8.54166666666667 : 3.44399301302083 : JumpStart); (8.70833333333333 : 3.44399301302083 : JumpEnd); (9 : 3.44399301302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/role/role_customer_role" />
+      <nodes>
+        <classShapeMoniker Id="bd46413e-4412-474e-88ef-2b0d1783ae10" />
+        <classShapeMoniker Id="25a1eeb9-a3d5-4cda-8bb8-235d60682db2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.11424438476562); (8.54166666666667 : 2.11424438476562 : JumpStart); (8.70833333333333 : 2.11424438476562 : JumpEnd); (12 : 2.11424438476562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/role/role_role_permission" />
+      <nodes>
+        <classShapeMoniker Id="bd46413e-4412-474e-88ef-2b0d1783ae10" />
+        <classShapeMoniker Id="74b83dd8-f38a-4937-aebc-dcc9720190b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 5.98202189127604); (11.0729166666667 : 5.98202189127604 : JumpStart); (11.2395833333333 : 5.98202189127604 : JumpEnd); (11.2916666666667 : 5.98202189127604 : JumpStart); (11.4583333333333 : 5.98202189127604 : JumpEnd); (11.75 : 5.98202189127604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/shopping_cart/shopping_cart_cart_item" />
+      <nodes>
+        <classShapeMoniker Id="ac303962-db5c-4ecd-ab47-e70a00abd425" />
+        <classShapeMoniker Id="4c0d2349-84ad-44ad-b223-f5bfb716466c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.53929768880208); (8.54166666666667 : 5.53929768880208 : JumpStart); (8.70833333333333 : 5.53929768880208 : JumpEnd); (9 : 5.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FastFoodManagementDBDataContext/customer/customer_shopping_cart" />
+      <nodes>
+        <classShapeMoniker Id="b81778e5-a01f-4a7d-8d05-db88da53f88c" />
+        <classShapeMoniker Id="ac303962-db5c-4ecd-ab47-e70a00abd425" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
