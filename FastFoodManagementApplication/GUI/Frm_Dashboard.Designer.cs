@@ -31,30 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRepStaPage = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnCateManaPage = new System.Windows.Forms.Button();
+            this.btnProManaPage = new System.Windows.Forms.Button();
+            this.btnEmpManaPage = new System.Windows.Forms.Button();
+            this.btnDashboardPage = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCusManaPage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.btnCusManaPage);
             this.panel1.Controls.Add(this.lblUsername);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnRepStaPage);
+            this.panel1.Controls.Add(this.pbLogo);
+            this.panel1.Controls.Add(this.btnCateManaPage);
+            this.panel1.Controls.Add(this.btnProManaPage);
+            this.panel1.Controls.Add(this.btnEmpManaPage);
+            this.panel1.Controls.Add(this.btnDashboardPage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -65,103 +67,103 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(0, 780);
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(0, 784);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.lblUsername.Size = new System.Drawing.Size(105, 42);
+            this.lblUsername.Size = new System.Drawing.Size(88, 38);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Welcome, ";
             // 
-            // button5
+            // btnRepStaPage
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 460);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(350, 79);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "    Reports and Statistics";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnRepStaPage.FlatAppearance.BorderSize = 0;
+            this.btnRepStaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepStaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepStaPage.ForeColor = System.Drawing.Color.White;
+            this.btnRepStaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnRepStaPage.Image")));
+            this.btnRepStaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepStaPage.Location = new System.Drawing.Point(0, 545);
+            this.btnRepStaPage.Name = "btnRepStaPage";
+            this.btnRepStaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnRepStaPage.TabIndex = 7;
+            this.btnRepStaPage.Text = "    Reports and Statistics";
+            this.btnRepStaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRepStaPage.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(101, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(101, 7);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(142, 104);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 3;
+            this.pbLogo.TabStop = false;
             // 
-            // button4
+            // btnCateManaPage
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 375);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(350, 79);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "    Categories Management";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCateManaPage.FlatAppearance.BorderSize = 0;
+            this.btnCateManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCateManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCateManaPage.ForeColor = System.Drawing.Color.White;
+            this.btnCateManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnCateManaPage.Image")));
+            this.btnCateManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCateManaPage.Location = new System.Drawing.Point(0, 460);
+            this.btnCateManaPage.Name = "btnCateManaPage";
+            this.btnCateManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnCateManaPage.TabIndex = 6;
+            this.btnCateManaPage.Text = "    Categories Management";
+            this.btnCateManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCateManaPage.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnProManaPage
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 290);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(350, 79);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "    Products Management";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnProManaPage.FlatAppearance.BorderSize = 0;
+            this.btnProManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProManaPage.ForeColor = System.Drawing.Color.White;
+            this.btnProManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnProManaPage.Image")));
+            this.btnProManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProManaPage.Location = new System.Drawing.Point(0, 375);
+            this.btnProManaPage.Name = "btnProManaPage";
+            this.btnProManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnProManaPage.TabIndex = 5;
+            this.btnProManaPage.Text = "    Products Management";
+            this.btnProManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProManaPage.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnEmpManaPage
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 205);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(350, 79);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "    Users Management";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEmpManaPage.FlatAppearance.BorderSize = 0;
+            this.btnEmpManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpManaPage.ForeColor = System.Drawing.Color.White;
+            this.btnEmpManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpManaPage.Image")));
+            this.btnEmpManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpManaPage.Location = new System.Drawing.Point(0, 205);
+            this.btnEmpManaPage.Name = "btnEmpManaPage";
+            this.btnEmpManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnEmpManaPage.TabIndex = 4;
+            this.btnEmpManaPage.Text = "    Employees Management";
+            this.btnEmpManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEmpManaPage.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDashboardPage
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 120);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(350, 79);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "    Dashboard";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDashboardPage.FlatAppearance.BorderSize = 0;
+            this.btnDashboardPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboardPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboardPage.ForeColor = System.Drawing.Color.White;
+            this.btnDashboardPage.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboardPage.Image")));
+            this.btnDashboardPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboardPage.Location = new System.Drawing.Point(0, 120);
+            this.btnDashboardPage.Name = "btnDashboardPage";
+            this.btnDashboardPage.Size = new System.Drawing.Size(350, 79);
+            this.btnDashboardPage.TabIndex = 3;
+            this.btnDashboardPage.Text = "    Dashboard";
+            this.btnDashboardPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboardPage.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
@@ -203,6 +205,22 @@
             this.label1.Text = "Fast Food Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCusManaPage
+            // 
+            this.btnCusManaPage.FlatAppearance.BorderSize = 0;
+            this.btnCusManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCusManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCusManaPage.ForeColor = System.Drawing.Color.White;
+            this.btnCusManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnCusManaPage.Image")));
+            this.btnCusManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCusManaPage.Location = new System.Drawing.Point(0, 290);
+            this.btnCusManaPage.Name = "btnCusManaPage";
+            this.btnCusManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnCusManaPage.TabIndex = 8;
+            this.btnCusManaPage.Text = "    Customers Management";
+            this.btnCusManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCusManaPage.UseVisualStyleBackColor = true;
+            // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,7 +234,7 @@
             this.Text = "Frm_Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -225,15 +243,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnDashboardPage;
+        private System.Windows.Forms.Button btnRepStaPage;
+        private System.Windows.Forms.Button btnCateManaPage;
+        private System.Windows.Forms.Button btnProManaPage;
+        private System.Windows.Forms.Button btnEmpManaPage;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCusManaPage;
     }
 }
