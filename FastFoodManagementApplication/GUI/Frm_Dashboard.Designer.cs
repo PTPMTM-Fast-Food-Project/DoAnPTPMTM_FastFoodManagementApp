@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSidebar = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnRepStaPage = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -41,27 +41,28 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCusManaPage = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlSidebar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.btnCusManaPage);
-            this.panel1.Controls.Add(this.lblUsername);
-            this.panel1.Controls.Add(this.btnRepStaPage);
-            this.panel1.Controls.Add(this.pbLogo);
-            this.panel1.Controls.Add(this.btnCateManaPage);
-            this.panel1.Controls.Add(this.btnProManaPage);
-            this.panel1.Controls.Add(this.btnEmpManaPage);
-            this.panel1.Controls.Add(this.btnDashboardPage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 822);
-            this.panel1.TabIndex = 0;
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.pnlSidebar.Controls.Add(this.btnCusManaPage);
+            this.pnlSidebar.Controls.Add(this.lblUsername);
+            this.pnlSidebar.Controls.Add(this.btnRepStaPage);
+            this.pnlSidebar.Controls.Add(this.pbLogo);
+            this.pnlSidebar.Controls.Add(this.btnCateManaPage);
+            this.pnlSidebar.Controls.Add(this.btnProManaPage);
+            this.pnlSidebar.Controls.Add(this.btnEmpManaPage);
+            this.pnlSidebar.Controls.Add(this.btnDashboardPage);
+            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSidebar.Name = "pnlSidebar";
+            this.pnlSidebar.Size = new System.Drawing.Size(350, 822);
+            this.pnlSidebar.TabIndex = 0;
             // 
             // lblUsername
             // 
@@ -221,19 +222,28 @@
             this.btnCusManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCusManaPage.UseVisualStyleBackColor = true;
             // 
+            // pnlMain
+            // 
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(350, 48);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1521, 774);
+            this.pnlMain.TabIndex = 4;
+            // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1871, 822);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSidebar);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Frm_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Dashboard";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSidebar.ResumeLayout(false);
+            this.pnlSidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -242,7 +252,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnDashboardPage;
         private System.Windows.Forms.Button btnRepStaPage;
@@ -254,5 +264,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCusManaPage;
+        private System.Windows.Forms.Panel pnlMain;
     }
 }

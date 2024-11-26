@@ -36,8 +36,8 @@
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnForgotPass = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnNaviRegisterPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(630, 65);
+            this.label1.Location = new System.Drawing.Point(636, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 34);
             this.label1.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(477, 152);
+            this.label2.Location = new System.Drawing.Point(477, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 18);
             this.label2.TabIndex = 2;
@@ -78,18 +78,18 @@
             // 
             this.txbUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbUsername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUsername.Location = new System.Drawing.Point(569, 151);
+            this.txbUsername.Location = new System.Drawing.Point(569, 157);
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(309, 26);
+            this.txbUsername.Size = new System.Drawing.Size(333, 26);
             this.txbUsername.TabIndex = 3;
             // 
             // txbPassword
             // 
             this.txbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassword.Location = new System.Drawing.Point(569, 211);
+            this.txbPassword.Location = new System.Drawing.Point(569, 217);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(309, 26);
+            this.txbPassword.Size = new System.Drawing.Size(333, 26);
             this.txbPassword.TabIndex = 5;
             this.txbPassword.UseSystemPasswordChar = true;
             // 
@@ -98,7 +98,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(477, 212);
+            this.label3.Location = new System.Drawing.Point(477, 218);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 4;
@@ -111,45 +111,46 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.Gold;
-            this.btnLogin.Location = new System.Drawing.Point(640, 274);
+            this.btnLogin.Location = new System.Drawing.Point(649, 280);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(84, 39);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = false;
             // 
+            // btnForgotPass
+            // 
+            this.btnForgotPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnForgotPass.FlatAppearance.BorderSize = 0;
+            this.btnForgotPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForgotPass.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgotPass.ForeColor = System.Drawing.Color.Gold;
+            this.btnForgotPass.Location = new System.Drawing.Point(584, 400);
+            this.btnForgotPass.Name = "btnForgotPass";
+            this.btnForgotPass.Size = new System.Drawing.Size(208, 39);
+            this.btnForgotPass.TabIndex = 8;
+            this.btnForgotPass.Text = "Forgot Password?";
+            this.btnForgotPass.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gold;
-            this.label4.Location = new System.Drawing.Point(667, 355);
+            this.label4.Location = new System.Drawing.Point(649, 348);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Or";
-            // 
-            // btnNaviRegisterPage
-            // 
-            this.btnNaviRegisterPage.FlatAppearance.BorderSize = 0;
-            this.btnNaviRegisterPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNaviRegisterPage.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNaviRegisterPage.ForeColor = System.Drawing.Color.Gold;
-            this.btnNaviRegisterPage.Location = new System.Drawing.Point(627, 403);
-            this.btnNaviRegisterPage.Name = "btnNaviRegisterPage";
-            this.btnNaviRegisterPage.Size = new System.Drawing.Size(106, 32);
-            this.btnNaviRegisterPage.TabIndex = 8;
-            this.btnNaviRegisterPage.Text = "Register";
-            this.btnNaviRegisterPage.UseVisualStyleBackColor = true;
+            this.label4.Size = new System.Drawing.Size(82, 22);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "________";
             // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(896, 513);
-            this.Controls.Add(this.btnNaviRegisterPage);
+            this.ClientSize = new System.Drawing.Size(915, 513);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnForgotPass);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.label3);
@@ -175,7 +176,7 @@
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnForgotPass;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnNaviRegisterPage;
     }
 }
