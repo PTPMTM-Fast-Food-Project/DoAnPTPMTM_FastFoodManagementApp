@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FastFoodManagementDB" Class="FastFoodManagementDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HOANG-KHANG\SQLSRV_KHANG;Initial Catalog=FastFoodManagementDB;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="FastFoodManagementDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HOANG-KHANG\SQLSRV_KHANG;Initial Catalog=FastFoodManagementDB;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="FastFoodManagementDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.admin_roles" Member="admin_roles">
     <Type Name="admin_role">
       <Column Name="admin_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -48,19 +48,19 @@
       <Association Name="country_city" Member="country" ThisKey="country_id" OtherKey="country_id" Type="country" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.country" Member="countries">
+    <Type Name="country">
+      <Column Name="country_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="country_city" Member="cities" ThisKey="country_id" OtherKey="country_id" Type="city" />
+    </Type>
+  </Table>
   <Table Name="dbo.customer_role" Member="customer_roles">
     <Type Name="customer_role">
       <Column Name="customer_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="role_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="customer_customer_role" Member="customer" ThisKey="customer_id" OtherKey="customer_id" Type="customer" IsForeignKey="true" />
       <Association Name="role_customer_role" Member="role" ThisKey="role_id" OtherKey="role_id" Type="role" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.country" Member="countries">
-    <Type Name="country">
-      <Column Name="country_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Association Name="country_city" Member="cities" ThisKey="country_id" OtherKey="country_id" Type="city" />
     </Type>
   </Table>
   <Table Name="dbo.customers" Member="customers">
@@ -107,9 +107,9 @@
   </Table>
   <Table Name="dbo.permissions" Member="permissions">
     <Type Name="permission">
-      <Column Name="permission_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="permission_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="permission_role_permission" Member="role_permissions" ThisKey="permission_id" OtherKey="permission_id" Type="role_permission" />
     </Type>
   </Table>

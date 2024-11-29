@@ -45,12 +45,12 @@ namespace DTO
     partial void Insertcity(city instance);
     partial void Updatecity(city instance);
     partial void Deletecity(city instance);
-    partial void Insertcustomer_role(customer_role instance);
-    partial void Updatecustomer_role(customer_role instance);
-    partial void Deletecustomer_role(customer_role instance);
     partial void Insertcountry(country instance);
     partial void Updatecountry(country instance);
     partial void Deletecountry(country instance);
+    partial void Insertcustomer_role(customer_role instance);
+    partial void Updatecustomer_role(customer_role instance);
+    partial void Deletecustomer_role(customer_role instance);
     partial void Insertcustomer(customer instance);
     partial void Updatecustomer(customer instance);
     partial void Deletecustomer(customer instance);
@@ -147,19 +147,19 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<customer_role> customer_roles
-		{
-			get
-			{
-				return this.GetTable<customer_role>();
-			}
-		}
-		
 		public System.Data.Linq.Table<country> countries
 		{
 			get
 			{
 				return this.GetTable<country>();
+			}
+		}
+		
+		public System.Data.Linq.Table<customer_role> customer_roles
+		{
+			get
+			{
+				return this.GetTable<customer_role>();
 			}
 		}
 		
@@ -1187,6 +1187,120 @@ namespace DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.country")]
+	public partial class country : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _country_id;
+		
+		private string _name;
+		
+		private EntitySet<city> _cities;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Oncountry_idChanging(long value);
+    partial void Oncountry_idChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    #endregion
+		
+		public country()
+		{
+			this._cities = new EntitySet<city>(new Action<city>(this.attach_cities), new Action<city>(this.detach_cities));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_country_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long country_id
+		{
+			get
+			{
+				return this._country_id;
+			}
+			set
+			{
+				if ((this._country_id != value))
+				{
+					this.Oncountry_idChanging(value);
+					this.SendPropertyChanging();
+					this._country_id = value;
+					this.SendPropertyChanged("country_id");
+					this.Oncountry_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(255)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="country_city", Storage="_cities", ThisKey="country_id", OtherKey="country_id")]
+		public EntitySet<city> cities
+		{
+			get
+			{
+				return this._cities;
+			}
+			set
+			{
+				this._cities.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_cities(city entity)
+		{
+			this.SendPropertyChanging();
+			entity.country = this;
+		}
+		
+		private void detach_cities(city entity)
+		{
+			this.SendPropertyChanging();
+			entity.country = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.customer_role")]
 	public partial class customer_role : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1352,120 +1466,6 @@ namespace DTO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.country")]
-	public partial class country : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _country_id;
-		
-		private string _name;
-		
-		private EntitySet<city> _cities;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncountry_idChanging(long value);
-    partial void Oncountry_idChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    #endregion
-		
-		public country()
-		{
-			this._cities = new EntitySet<city>(new Action<city>(this.attach_cities), new Action<city>(this.detach_cities));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_country_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long country_id
-		{
-			get
-			{
-				return this._country_id;
-			}
-			set
-			{
-				if ((this._country_id != value))
-				{
-					this.Oncountry_idChanging(value);
-					this.SendPropertyChanging();
-					this._country_id = value;
-					this.SendPropertyChanged("country_id");
-					this.Oncountry_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(255)")]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="country_city", Storage="_cities", ThisKey="country_id", OtherKey="country_id")]
-		public EntitySet<city> cities
-		{
-			get
-			{
-				return this._cities;
-			}
-			set
-			{
-				this._cities.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_cities(city entity)
-		{
-			this.SendPropertyChanging();
-			entity.country = this;
-		}
-		
-		private void detach_cities(city entity)
-		{
-			this.SendPropertyChanging();
-			entity.country = null;
 		}
 	}
 	
@@ -2419,7 +2419,7 @@ namespace DTO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long permission_id
 		{
 			get
@@ -2459,7 +2459,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string description
 		{
 			get

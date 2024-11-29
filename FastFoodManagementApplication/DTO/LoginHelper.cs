@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
 
 namespace DTO
 {
@@ -66,7 +63,7 @@ namespace DTO
         {
             string newConnectionString = "Data Source=" + pServerName
             + ";Initial Catalog=" + pDataBase + ";User ID=" + pUser + ";pwd = " + pPass + ";TrustServerCertificate=True";
-            
+
             // Mở tệp cấu hình hiện tại
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 

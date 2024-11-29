@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.btnCusManaPage = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnRepStaPage = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -40,7 +41,6 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCusManaPage = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -63,6 +63,22 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(350, 822);
             this.pnlSidebar.TabIndex = 0;
+            // 
+            // btnCusManaPage
+            // 
+            this.btnCusManaPage.FlatAppearance.BorderSize = 0;
+            this.btnCusManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCusManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCusManaPage.ForeColor = System.Drawing.Color.White;
+            this.btnCusManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnCusManaPage.Image")));
+            this.btnCusManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCusManaPage.Location = new System.Drawing.Point(0, 290);
+            this.btnCusManaPage.Name = "btnCusManaPage";
+            this.btnCusManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnCusManaPage.TabIndex = 8;
+            this.btnCusManaPage.Text = "    Customers Management";
+            this.btnCusManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCusManaPage.UseVisualStyleBackColor = true;
             // 
             // lblUsername
             // 
@@ -175,7 +191,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(1331, 0);
+            this.btnLogout.Location = new System.Drawing.Point(1384, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(190, 48);
             this.btnLogout.TabIndex = 2;
@@ -191,7 +207,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(350, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1521, 48);
+            this.panel2.Size = new System.Drawing.Size(1574, 48);
             this.panel2.TabIndex = 3;
             // 
             // label1
@@ -206,35 +222,19 @@
             this.label1.Text = "Fast Food Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCusManaPage
-            // 
-            this.btnCusManaPage.FlatAppearance.BorderSize = 0;
-            this.btnCusManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCusManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCusManaPage.ForeColor = System.Drawing.Color.White;
-            this.btnCusManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnCusManaPage.Image")));
-            this.btnCusManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCusManaPage.Location = new System.Drawing.Point(0, 290);
-            this.btnCusManaPage.Name = "btnCusManaPage";
-            this.btnCusManaPage.Size = new System.Drawing.Size(350, 79);
-            this.btnCusManaPage.TabIndex = 8;
-            this.btnCusManaPage.Text = "    Customers Management";
-            this.btnCusManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCusManaPage.UseVisualStyleBackColor = true;
-            // 
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(350, 48);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1521, 774);
+            this.pnlMain.Size = new System.Drawing.Size(1574, 774);
             this.pnlMain.TabIndex = 4;
             // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1871, 822);
+            this.ClientSize = new System.Drawing.Size(1924, 822);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlSidebar);

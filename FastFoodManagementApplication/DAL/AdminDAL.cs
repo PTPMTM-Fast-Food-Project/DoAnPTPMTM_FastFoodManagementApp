@@ -152,11 +152,17 @@ namespace DAL
             }
         }
 
-        public bool ChangePassword(string password)
+        public bool ChangePassword(string username, string password)
         {
             try
             {
-                
+                admin aObtained = FindAdminByUsername(username);
+
+                if (aObtained == null)
+                    return false;
+
+                aObtained.password = password;
+                db.SubmitChanges();
 
                 return true;
             }

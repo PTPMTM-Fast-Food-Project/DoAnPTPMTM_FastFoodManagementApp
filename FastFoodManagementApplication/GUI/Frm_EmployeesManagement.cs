@@ -17,6 +17,7 @@ namespace GUI
     {
         private AdminBLL adminBLL = new AdminBLL();
         private RoleBLL roleBLL = new RoleBLL();
+        private PermissionBLL permissionBLL = new PermissionBLL();
         private string loadedImagePath = null;
         public Frm_EmployeesManagement()
         {
@@ -24,16 +25,225 @@ namespace GUI
             this.Load += Frm_EmployeesManagement_Load;
             btnAdd.Click += BtnAdd_Click;
             dgvEmpList.SelectionChanged += DgvEmpList_SelectionChanged;
+            dgvRoleList.SelectionChanged += DgvRoleList_SelectionChanged;
+            dgvPerList.SelectionChanged += DgvPerList_SelectionChanged;
             btnUpdate.Click += BtnUpdate_Click;
             btnDelete.Click += BtnDelete_Click;
+            btnResetPassword.Click += BtnResetPassword_Click;
             btnUploadAvatar.Click += BtnUploadAvatar_Click;
-            btnRolesMana.Click += BtnRolesMana_Click;
+            btnAddRole.Click += BtnAddRole_Click;
+            btnUpdateRole.Click += BtnUpdateRole_Click;
+            btnDeleteRole.Click += BtnDeleteRole_Click;
+            btnClear.Click += BtnClear_Click;
+            btnAddPermission.Click += BtnAddPermission_Click;
+            btnUpdatePermission.Click += BtnUpdatePermission_Click;
+            btnDeletePermission.Click += BtnDeletePermission_Click;
+            btnClearPerInfo.Click += BtnClearPerInfo_Click;
+            btnAuthorize.Click += BtnAuthorize_Click;
         }
 
-        private void BtnRolesMana_Click(object sender, EventArgs e)
+        private void BtnAuthorize_Click(object sender, EventArgs e)
         {
-            Frm_RolesManagement rolesMana = new Frm_RolesManagement();
-            rolesMana.ShowDialog();
+            Frm_Authorization f = new Frm_Authorization();
+            f.ShowDialog();
+        }
+
+        private void BtnClearPerInfo_Click(object sender, EventArgs e)
+        {
+            txbPerName.Clear();
+            txbDescription.Clear();
+            txbPerName.Focus();
+        }
+
+        private void BtnDeletePermission_Click(object sender, EventArgs e)
+        {
+            if (dgvPerList.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a permission to delete", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            permission p = permissionBLL.FindPermissionByPermissionName(txbPerName.Text.Trim());
+
+            DialogResult res = MessageBox.Show("Are you sure you want to delete this permission?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (res == DialogResult.No)
+                return;
+
+            if (p != null && permissionBLL.RemovePermissionFromTheRole(p.permission_id) && 
+                permissionBLL.DeletePermission(p.permission_id))
+            {
+                MessageBox.Show("Deleted successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllPermissions();
+            }
+            else
+            {
+                MessageBox.Show("Delete failed, please try again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnUpdatePermission_Click(object sender, EventArgs e)
+        {
+            if (dgvPerList.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a permission to edit", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string description = txbDescription.Text.Trim();
+            permission p = permissionBLL.FindPermissionByPermissionName(txbPerName.Text.Trim());
+
+            if (p != null && permissionBLL.UpdatePermission(p.permission_id, p.name, description))
+            {
+                MessageBox.Show("Updated successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllPermissions();
+            }
+            else
+            {
+                MessageBox.Show("Update failed, please try again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnAddPermission_Click(object sender, EventArgs e)
+        {
+            string perName = txbPerName.Text.Trim();
+            string description = txbDescription.Text.Trim();
+
+            if (perName.Length <= 0)
+            {
+                MessageBox.Show("Please enter permission name", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (permissionBLL.FindPermissionByPermissionName(perName) != null)
+            {
+                MessageBox.Show("Permission already exists", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (permissionBLL.InsertPermission(perName, description))
+            {
+                MessageBox.Show("Insert a permission successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllPermissions();
+            }
+            else
+            {
+                MessageBox.Show("Permission insertion failed, please try again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void DgvPerList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPerList.CurrentRow != null)
+            {
+                txbPerName.Text = dgvPerList.CurrentRow.Cells[1].Value != null ? 
+                    dgvPerList.CurrentRow.Cells[1].Value.ToString() : string.Empty;
+                txbDescription.Text = dgvPerList.CurrentRow.Cells[2].Value != null ?
+                    dgvPerList.CurrentRow.Cells[2].Value.ToString() : string.Empty;
+            }
+        }
+
+        private void BtnResetPassword_Click(object sender, EventArgs e)
+        {
+            if (dgvEmpList.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a user to reset user's password", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            object usernameObject = dgvEmpList.CurrentRow.Cells[2].Value;
+            Frm_ForgotPassword f = new Frm_ForgotPassword();
+            f.SetUsername(usernameObject != null ? usernameObject.ToString() : string.Empty);
+            f.ShowDialog();
+        }
+
+        private void DgvRoleList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvRoleList.CurrentRow != null)
+            {
+                txbRoleName.Text = dgvRoleList.CurrentRow.Cells[1].Value != null ?
+                    dgvRoleList.CurrentRow.Cells[1].Value.ToString() : string.Empty; ;
+            }
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            txbRoleName.Clear();
+            txbRoleName.Focus();
+        }
+
+        private void BtnDeleteRole_Click(object sender, EventArgs e)
+        {
+            if(dgvRoleList.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a role to delete", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            role r = roleBLL.FindRoleByRoleName(txbRoleName.Text.Trim());
+
+            DialogResult res = MessageBox.Show("Are you sure you want to delete this role?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (res == DialogResult.No)
+                return;
+
+            if (r != null && roleBLL.RemoveRoleAllUsers(r.role_id) && roleBLL.DeleteRole(r.role_id))
+            {
+                MessageBox.Show("Deleted successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllRoles();
+            }
+            else
+            {
+                MessageBox.Show("Delete failed, please try again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnUpdateRole_Click(object sender, EventArgs e)
+        {
+            if (dgvRoleList.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a role to edit", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            role r = roleBLL.FindRoleByRoleName(txbRoleName.Text.Trim());
+
+            if (r != null && roleBLL.UpdateRole(r.role_id, r.name))
+            {
+                MessageBox.Show("Updated successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllRoles();
+            }
+            else
+            {
+                MessageBox.Show("Update failed, please try again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnAddRole_Click(object sender, EventArgs e)
+        {
+            string roleName = txbRoleName.Text.Trim();
+
+            if (roleName.Length <= 0)
+            {
+                MessageBox.Show("Please enter role name", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (roleBLL.FindRoleByRoleName(roleName) != null)
+            {
+                MessageBox.Show("Role already exists", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (roleBLL.InsertRole(roleName))
+            {
+                MessageBox.Show("Insert a role successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllRoles();
+            }
+            else
+            {
+                MessageBox.Show("Role insertion failed, please try again", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnUploadAvatar_Click(object sender, EventArgs e)
@@ -188,6 +398,8 @@ namespace GUI
         {
             LoadUsersWithRoleIsNotAdmin();
             LoadComboRoles();
+            LoadAllRoles();
+            LoadAllPermissions();
             txbUsername.Enabled = false;
         }
 
@@ -203,6 +415,20 @@ namespace GUI
             cmbRoles.DataSource = roleBLL.FindAllRoles();
             cmbRoles.DisplayMember = "name";
             cmbRoles.ValueMember = "role_id";
+        }
+
+        public void LoadAllRoles()
+        {
+            dgvRoleList.DataSource = roleBLL.FindAllRoles();
+            dgvRoleList.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            dgvRoleList.DefaultCellStyle.ForeColor = Color.Black;
+        }
+
+        public void LoadAllPermissions()
+        {
+            dgvPerList.DataSource = permissionBLL.LoadAllPermissions();
+            dgvPerList.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            dgvPerList.DefaultCellStyle.ForeColor = Color.Black;
         }
     }
 }

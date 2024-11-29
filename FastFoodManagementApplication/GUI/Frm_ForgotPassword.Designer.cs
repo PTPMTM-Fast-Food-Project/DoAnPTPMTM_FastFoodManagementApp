@@ -33,7 +33,7 @@
             this.btnChangePass = new System.Windows.Forms.Button();
             this.txbNewPass = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbOldPass = new System.Windows.Forms.TextBox();
+            this.txbUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbRetypePass = new System.Windows.Forms.TextBox();
@@ -70,9 +70,9 @@
             // 
             this.txbNewPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbNewPass.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNewPass.Location = new System.Drawing.Point(148, 220);
+            this.txbNewPass.Location = new System.Drawing.Point(176, 220);
             this.txbNewPass.Name = "txbNewPass";
-            this.txbNewPass.Size = new System.Drawing.Size(281, 26);
+            this.txbNewPass.Size = new System.Drawing.Size(258, 26);
             this.txbNewPass.TabIndex = 13;
             this.txbNewPass.UseSystemPasswordChar = true;
             // 
@@ -87,14 +87,14 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "New Password:";
             // 
-            // txbOldPass
+            // txbUsername
             // 
-            this.txbOldPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbOldPass.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbOldPass.Location = new System.Drawing.Point(148, 160);
-            this.txbOldPass.Name = "txbOldPass";
-            this.txbOldPass.Size = new System.Drawing.Size(281, 26);
-            this.txbOldPass.TabIndex = 11;
+            this.txbUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbUsername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUsername.Location = new System.Drawing.Point(176, 160);
+            this.txbUsername.Name = "txbUsername";
+            this.txbUsername.Size = new System.Drawing.Size(258, 26);
+            this.txbUsername.TabIndex = 11;
             // 
             // label2
             // 
@@ -103,9 +103,9 @@
             this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(11, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 18);
+            this.label2.Size = new System.Drawing.Size(86, 18);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Old Password:";
+            this.label2.Text = "Username:";
             // 
             // label1
             // 
@@ -122,9 +122,9 @@
             // 
             this.txbRetypePass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbRetypePass.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbRetypePass.Location = new System.Drawing.Point(148, 281);
+            this.txbRetypePass.Location = new System.Drawing.Point(176, 281);
             this.txbRetypePass.Name = "txbRetypePass";
-            this.txbRetypePass.Size = new System.Drawing.Size(281, 26);
+            this.txbRetypePass.Size = new System.Drawing.Size(258, 26);
             this.txbRetypePass.TabIndex = 17;
             this.txbRetypePass.UseSystemPasswordChar = true;
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.btnChangePass);
             this.Controls.Add(this.txbNewPass);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txbOldPass);
+            this.Controls.Add(this.txbUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -169,7 +169,7 @@
         private System.Windows.Forms.Button btnChangePass;
         private System.Windows.Forms.TextBox txbNewPass;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbOldPass;
+        private System.Windows.Forms.TextBox txbUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbRetypePass;

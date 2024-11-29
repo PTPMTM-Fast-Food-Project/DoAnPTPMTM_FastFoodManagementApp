@@ -99,5 +99,11 @@ namespace BLL
 
             return adminDAL.RevokeUserPermissions(a.admin_id);
         }
+
+        public bool ChangePassword(string username, string password)
+        {
+            string hashPassword = PasswordHelper.HashPassword(password);
+            return adminDAL.ChangePassword(username, hashPassword);
+        }
     }
 }
