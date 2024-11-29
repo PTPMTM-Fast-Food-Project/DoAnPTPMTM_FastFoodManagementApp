@@ -18,6 +18,24 @@ namespace GUI
             btnLogout.Click += BtnLogout_Click;
             btnEmpManaPage.Click += BtnEmpManaPage_Click;
             btnCusManaPage.Click += BtnCusManaPage_Click;
+            btnCateManaPage.Click += BtnCateManaPage_Click;
+            btnProManaPage.Click += BtnProManaPage_Click;
+        }
+
+        private void BtnProManaPage_Click(object sender, EventArgs e)
+        {
+            Frm_ProductsManagement f = new Frm_ProductsManagement();
+            OpenChildForm(f);
+            ClearButtonBackColor();
+            btnProManaPage.BackColor = Color.FromArgb(178, 8, 55);
+        }
+
+        private void BtnCateManaPage_Click(object sender, EventArgs e)
+        {
+            Frm_CategoryManagement f = new Frm_CategoryManagement();
+            OpenChildForm(f);
+            ClearButtonBackColor();
+            btnCateManaPage.BackColor = Color.FromArgb(178, 8, 55);
         }
 
         private void BtnCusManaPage_Click(object sender, EventArgs e)
