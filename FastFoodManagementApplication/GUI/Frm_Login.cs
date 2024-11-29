@@ -30,20 +30,21 @@ namespace GUI
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (LoginHelper.Check_Config() == 0)
-            {
-                ProcessLogin();// Cấu hình phù hợp xử lý đăng nhập
-            }
-            if (LoginHelper.Check_Config() == 1)
-            {
-                MessageBox.Show("The configuration string does not exist", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);// Xử lý cấu hình
-                ProcessConfig();
-            }
-            if (LoginHelper.Check_Config() == 2)
-            {
-                MessageBox.Show("The configuration string does not match", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);// Xử lý cấu hình
-                ProcessConfig();
-            }
+            //if (LoginHelper.Check_Config() == 0)
+            //{
+            //    ProcessLogin();// Cấu hình phù hợp xử lý đăng nhập
+            //}
+            //if (LoginHelper.Check_Config() == 1)
+            //{
+            //    MessageBox.Show("The configuration string does not exist", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);// Xử lý cấu hình
+            //    ProcessConfig();
+            //}
+            //if (LoginHelper.Check_Config() == 2)
+            //{
+            //    MessageBox.Show("The configuration string does not match", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);// Xử lý cấu hình
+            //    ProcessConfig();
+            //}
+            ProcessLogin();
         }
 
         private void ProcessLogin()

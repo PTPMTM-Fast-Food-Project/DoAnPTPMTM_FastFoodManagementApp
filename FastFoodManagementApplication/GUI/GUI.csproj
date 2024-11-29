@@ -68,13 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Frm_Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Authorization.Designer.cs">
       <DependentUpon>Frm_Authorization.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="AddACustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,7 +85,6 @@
     </Compile>
     <Compile Include="Frm_CategoryManagement.Designer.cs">
       <DependentUpon>Frm_CategoryManagement.cs</DependentUpon>
->>>>>>> xoenxoen
     </Compile>
     <Compile Include="Frm_Config.cs">
       <SubType>Form</SubType>
@@ -144,16 +142,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <EmbeddedResource Include="Frm_Authorization.resx">
       <DependentUpon>Frm_Authorization.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="AddACustomer.resx">
       <DependentUpon>AddACustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_CategoryManagement.resx">
       <DependentUpon>Frm_CategoryManagement.cs</DependentUpon>
->>>>>>> xoenxoen
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Config.resx">
       <DependentUpon>Frm_Config.cs</DependentUpon>
@@ -163,6 +159,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_EmployeesManagement.resx">
       <DependentUpon>Frm_EmployeesManagement.cs</DependentUpon>

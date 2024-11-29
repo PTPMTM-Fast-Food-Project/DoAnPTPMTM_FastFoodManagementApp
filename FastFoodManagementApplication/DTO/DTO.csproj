@@ -59,12 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginHelper.cs" />
     <Compile Include="FastFoodManagementDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FastFoodManagementDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="LoginHelper.cs" />
     <Compile Include="LoginResult.cs" />
     <Compile Include="PasswordHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
