@@ -33,6 +33,9 @@ namespace DTO
     partial void Insertadmin_role(admin_role instance);
     partial void Updateadmin_role(admin_role instance);
     partial void Deleteadmin_role(admin_role instance);
+    partial void Insertshopping_cart(shopping_cart instance);
+    partial void Updateshopping_cart(shopping_cart instance);
+    partial void Deleteshopping_cart(shopping_cart instance);
     partial void Insertadmin(admin instance);
     partial void Updateadmin(admin instance);
     partial void Deleteadmin(admin instance);
@@ -54,6 +57,9 @@ namespace DTO
     partial void Insertcustomer(customer instance);
     partial void Updatecustomer(customer instance);
     partial void Deletecustomer(customer instance);
+    partial void Insertforgot_password_token(forgot_password_token instance);
+    partial void Updateforgot_password_token(forgot_password_token instance);
+    partial void Deleteforgot_password_token(forgot_password_token instance);
     partial void Insertorder_detail(order_detail instance);
     partial void Updateorder_detail(order_detail instance);
     partial void Deleteorder_detail(order_detail instance);
@@ -72,9 +78,6 @@ namespace DTO
     partial void Insertrole(role instance);
     partial void Updaterole(role instance);
     partial void Deleterole(role instance);
-    partial void Insertshopping_cart(shopping_cart instance);
-    partial void Updateshopping_cart(shopping_cart instance);
-    partial void Deleteshopping_cart(shopping_cart instance);
     #endregion
 		
 		public FastFoodManagementDBDataContext() : 
@@ -112,6 +115,14 @@ namespace DTO
 			get
 			{
 				return this.GetTable<admin_role>();
+			}
+		}
+		
+		public System.Data.Linq.Table<shopping_cart> shopping_carts
+		{
+			get
+			{
+				return this.GetTable<shopping_cart>();
 			}
 		}
 		
@@ -171,6 +182,14 @@ namespace DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<forgot_password_token> forgot_password_tokens
+		{
+			get
+			{
+				return this.GetTable<forgot_password_token>();
+			}
+		}
+		
 		public System.Data.Linq.Table<order_detail> order_details
 		{
 			get
@@ -216,14 +235,6 @@ namespace DTO
 			get
 			{
 				return this.GetTable<role>();
-			}
-		}
-		
-		public System.Data.Linq.Table<shopping_cart> shopping_carts
-		{
-			get
-			{
-				return this.GetTable<shopping_cart>();
 			}
 		}
 	}
@@ -393,6 +404,209 @@ namespace DTO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.shopping_cart")]
+	public partial class shopping_cart : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _shopping_cart_id;
+		
+		private int _total_items;
+		
+		private double _total_price;
+		
+		private System.Nullable<long> _customer_id;
+		
+		private EntitySet<cart_item> _cart_items;
+		
+		private EntityRef<customer> _customer;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onshopping_cart_idChanging(long value);
+    partial void Onshopping_cart_idChanged();
+    partial void Ontotal_itemsChanging(int value);
+    partial void Ontotal_itemsChanged();
+    partial void Ontotal_priceChanging(double value);
+    partial void Ontotal_priceChanged();
+    partial void Oncustomer_idChanging(System.Nullable<long> value);
+    partial void Oncustomer_idChanged();
+    #endregion
+		
+		public shopping_cart()
+		{
+			this._cart_items = new EntitySet<cart_item>(new Action<cart_item>(this.attach_cart_items), new Action<cart_item>(this.detach_cart_items));
+			this._customer = default(EntityRef<customer>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shopping_cart_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long shopping_cart_id
+		{
+			get
+			{
+				return this._shopping_cart_id;
+			}
+			set
+			{
+				if ((this._shopping_cart_id != value))
+				{
+					this.Onshopping_cart_idChanging(value);
+					this.SendPropertyChanging();
+					this._shopping_cart_id = value;
+					this.SendPropertyChanged("shopping_cart_id");
+					this.Onshopping_cart_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total_items", DbType="Int NOT NULL")]
+		public int total_items
+		{
+			get
+			{
+				return this._total_items;
+			}
+			set
+			{
+				if ((this._total_items != value))
+				{
+					this.Ontotal_itemsChanging(value);
+					this.SendPropertyChanging();
+					this._total_items = value;
+					this.SendPropertyChanged("total_items");
+					this.Ontotal_itemsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total_price", DbType="Float NOT NULL")]
+		public double total_price
+		{
+			get
+			{
+				return this._total_price;
+			}
+			set
+			{
+				if ((this._total_price != value))
+				{
+					this.Ontotal_priceChanging(value);
+					this.SendPropertyChanging();
+					this._total_price = value;
+					this.SendPropertyChanged("total_price");
+					this.Ontotal_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt")]
+		public System.Nullable<long> customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					if (this._customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="shopping_cart_cart_item", Storage="_cart_items", ThisKey="shopping_cart_id", OtherKey="shopping_cart_id")]
+		public EntitySet<cart_item> cart_items
+		{
+			get
+			{
+				return this._cart_items;
+			}
+			set
+			{
+				this._cart_items.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_shopping_cart", Storage="_customer", ThisKey="customer_id", OtherKey="customer_id", IsForeignKey=true)]
+		public customer customer
+		{
+			get
+			{
+				return this._customer.Entity;
+			}
+			set
+			{
+				customer previousValue = this._customer.Entity;
+				if (((previousValue != value) 
+							|| (this._customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._customer.Entity = null;
+						previousValue.shopping_carts.Remove(this);
+					}
+					this._customer.Entity = value;
+					if ((value != null))
+					{
+						value.shopping_carts.Add(this);
+						this._customer_id = value.customer_id;
+					}
+					else
+					{
+						this._customer_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("customer");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_cart_items(cart_item entity)
+		{
+			this.SendPropertyChanging();
+			entity.shopping_cart = this;
+		}
+		
+		private void detach_cart_items(cart_item entity)
+		{
+			this.SendPropertyChanging();
+			entity.shopping_cart = null;
 		}
 	}
 	
@@ -622,9 +836,9 @@ namespace DTO
 		
 		private System.Nullable<long> _product_id;
 		
-		private EntityRef<product> _product;
-		
 		private EntityRef<shopping_cart> _shopping_cart;
+		
+		private EntityRef<product> _product;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -644,8 +858,8 @@ namespace DTO
 		
 		public cart_item()
 		{
-			this._product = default(EntityRef<product>);
 			this._shopping_cart = default(EntityRef<shopping_cart>);
+			this._product = default(EntityRef<product>);
 			OnCreated();
 		}
 		
@@ -757,40 +971,6 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_cart_item", Storage="_product", ThisKey="product_id", OtherKey="product_id", IsForeignKey=true)]
-		public product product
-		{
-			get
-			{
-				return this._product.Entity;
-			}
-			set
-			{
-				product previousValue = this._product.Entity;
-				if (((previousValue != value) 
-							|| (this._product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._product.Entity = null;
-						previousValue.cart_items.Remove(this);
-					}
-					this._product.Entity = value;
-					if ((value != null))
-					{
-						value.cart_items.Add(this);
-						this._product_id = value.product_id;
-					}
-					else
-					{
-						this._product_id = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("product");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="shopping_cart_cart_item", Storage="_shopping_cart", ThisKey="shopping_cart_id", OtherKey="shopping_cart_id", IsForeignKey=true)]
 		public shopping_cart shopping_cart
 		{
@@ -821,6 +1001,40 @@ namespace DTO
 						this._shopping_cart_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("shopping_cart");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_cart_item", Storage="_product", ThisKey="product_id", OtherKey="product_id", IsForeignKey=true)]
+		public product product
+		{
+			get
+			{
+				return this._product.Entity;
+			}
+			set
+			{
+				product previousValue = this._product.Entity;
+				if (((previousValue != value) 
+							|| (this._product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._product.Entity = null;
+						previousValue.cart_items.Remove(this);
+					}
+					this._product.Entity = value;
+					if ((value != null))
+					{
+						value.cart_items.Add(this);
+						this._product_id = value.product_id;
+					}
+					else
+					{
+						this._product_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("product");
 				}
 			}
 		}
@@ -1493,11 +1707,13 @@ namespace DTO
 		
 		private System.Nullable<long> _name;
 		
+		private EntitySet<shopping_cart> _shopping_carts;
+		
 		private EntitySet<customer_role> _customer_roles;
 		
-		private EntitySet<order> _orders;
+		private EntitySet<forgot_password_token> _forgot_password_tokens;
 		
-		private EntitySet<shopping_cart> _shopping_carts;
+		private EntitySet<order> _orders;
 		
 		private EntityRef<city> _city;
 		
@@ -1527,9 +1743,10 @@ namespace DTO
 		
 		public customer()
 		{
-			this._customer_roles = new EntitySet<customer_role>(new Action<customer_role>(this.attach_customer_roles), new Action<customer_role>(this.detach_customer_roles));
-			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
 			this._shopping_carts = new EntitySet<shopping_cart>(new Action<shopping_cart>(this.attach_shopping_carts), new Action<shopping_cart>(this.detach_shopping_carts));
+			this._customer_roles = new EntitySet<customer_role>(new Action<customer_role>(this.attach_customer_roles), new Action<customer_role>(this.detach_customer_roles));
+			this._forgot_password_tokens = new EntitySet<forgot_password_token>(new Action<forgot_password_token>(this.attach_forgot_password_tokens), new Action<forgot_password_token>(this.detach_forgot_password_tokens));
+			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
 			this._city = default(EntityRef<city>);
 			OnCreated();
 		}
@@ -1718,6 +1935,19 @@ namespace DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_shopping_cart", Storage="_shopping_carts", ThisKey="customer_id", OtherKey="customer_id")]
+		public EntitySet<shopping_cart> shopping_carts
+		{
+			get
+			{
+				return this._shopping_carts;
+			}
+			set
+			{
+				this._shopping_carts.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_customer_role", Storage="_customer_roles", ThisKey="customer_id", OtherKey="customer_id")]
 		public EntitySet<customer_role> customer_roles
 		{
@@ -1731,6 +1961,19 @@ namespace DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_forgot_password_token", Storage="_forgot_password_tokens", ThisKey="customer_id", OtherKey="customer_id")]
+		public EntitySet<forgot_password_token> forgot_password_tokens
+		{
+			get
+			{
+				return this._forgot_password_tokens;
+			}
+			set
+			{
+				this._forgot_password_tokens.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_orders", ThisKey="customer_id", OtherKey="customer_id")]
 		public EntitySet<order> orders
 		{
@@ -1741,19 +1984,6 @@ namespace DTO
 			set
 			{
 				this._orders.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_shopping_cart", Storage="_shopping_carts", ThisKey="customer_id", OtherKey="customer_id")]
-		public EntitySet<shopping_cart> shopping_carts
-		{
-			get
-			{
-				return this._shopping_carts;
-			}
-			set
-			{
-				this._shopping_carts.Assign(value);
 			}
 		}
 		
@@ -1811,6 +2041,18 @@ namespace DTO
 			}
 		}
 		
+		private void attach_shopping_carts(shopping_cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.customer = this;
+		}
+		
+		private void detach_shopping_carts(shopping_cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.customer = null;
+		}
+		
 		private void attach_customer_roles(customer_role entity)
 		{
 			this.SendPropertyChanging();
@@ -1818,6 +2060,18 @@ namespace DTO
 		}
 		
 		private void detach_customer_roles(customer_role entity)
+		{
+			this.SendPropertyChanging();
+			entity.customer = null;
+		}
+		
+		private void attach_forgot_password_tokens(forgot_password_token entity)
+		{
+			this.SendPropertyChanging();
+			entity.customer = this;
+		}
+		
+		private void detach_forgot_password_tokens(forgot_password_token entity)
 		{
 			this.SendPropertyChanging();
 			entity.customer = null;
@@ -1834,17 +2088,204 @@ namespace DTO
 			this.SendPropertyChanging();
 			entity.customer = null;
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.forgot_password_token")]
+	public partial class forgot_password_token : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		private void attach_shopping_carts(shopping_cart entity)
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _id;
+		
+		private System.DateTime _expire_date_time;
+		
+		private bool _is_used;
+		
+		private string _token;
+		
+		private long _customer_id;
+		
+		private EntityRef<customer> _customer;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void Onexpire_date_timeChanging(System.DateTime value);
+    partial void Onexpire_date_timeChanged();
+    partial void Onis_usedChanging(bool value);
+    partial void Onis_usedChanged();
+    partial void OntokenChanging(string value);
+    partial void OntokenChanged();
+    partial void Oncustomer_idChanging(long value);
+    partial void Oncustomer_idChanged();
+    #endregion
+		
+		public forgot_password_token()
 		{
-			this.SendPropertyChanging();
-			entity.customer = this;
+			this._customer = default(EntityRef<customer>);
+			OnCreated();
 		}
 		
-		private void detach_shopping_carts(shopping_cart entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		public long id
 		{
-			this.SendPropertyChanging();
-			entity.customer = null;
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_expire_date_time", DbType="DateTime2 NOT NULL")]
+		public System.DateTime expire_date_time
+		{
+			get
+			{
+				return this._expire_date_time;
+			}
+			set
+			{
+				if ((this._expire_date_time != value))
+				{
+					this.Onexpire_date_timeChanging(value);
+					this.SendPropertyChanging();
+					this._expire_date_time = value;
+					this.SendPropertyChanged("expire_date_time");
+					this.Onexpire_date_timeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_is_used", DbType="Bit NOT NULL")]
+		public bool is_used
+		{
+			get
+			{
+				return this._is_used;
+			}
+			set
+			{
+				if ((this._is_used != value))
+				{
+					this.Onis_usedChanging(value);
+					this.SendPropertyChanging();
+					this._is_used = value;
+					this.SendPropertyChanged("is_used");
+					this.Onis_usedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_token", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string token
+		{
+			get
+			{
+				return this._token;
+			}
+			set
+			{
+				if ((this._token != value))
+				{
+					this.OntokenChanging(value);
+					this.SendPropertyChanging();
+					this._token = value;
+					this.SendPropertyChanged("token");
+					this.OntokenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt NOT NULL")]
+		public long customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					if (this._customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_forgot_password_token", Storage="_customer", ThisKey="customer_id", OtherKey="customer_id", IsForeignKey=true)]
+		public customer customer
+		{
+			get
+			{
+				return this._customer.Entity;
+			}
+			set
+			{
+				customer previousValue = this._customer.Entity;
+				if (((previousValue != value) 
+							|| (this._customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._customer.Entity = null;
+						previousValue.forgot_password_tokens.Remove(this);
+					}
+					this._customer.Entity = value;
+					if ((value != null))
+					{
+						value.forgot_password_tokens.Add(this);
+						this._customer_id = value.customer_id;
+					}
+					else
+					{
+						this._customer_id = default(long);
+					}
+					this.SendPropertyChanged("customer");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -3259,209 +3700,6 @@ namespace DTO
 		{
 			this.SendPropertyChanging();
 			entity.role = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.shopping_cart")]
-	public partial class shopping_cart : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _shopping_cart_id;
-		
-		private int _total_items;
-		
-		private double _total_price;
-		
-		private System.Nullable<long> _customer_id;
-		
-		private EntitySet<cart_item> _cart_items;
-		
-		private EntityRef<customer> _customer;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onshopping_cart_idChanging(long value);
-    partial void Onshopping_cart_idChanged();
-    partial void Ontotal_itemsChanging(int value);
-    partial void Ontotal_itemsChanged();
-    partial void Ontotal_priceChanging(double value);
-    partial void Ontotal_priceChanged();
-    partial void Oncustomer_idChanging(System.Nullable<long> value);
-    partial void Oncustomer_idChanged();
-    #endregion
-		
-		public shopping_cart()
-		{
-			this._cart_items = new EntitySet<cart_item>(new Action<cart_item>(this.attach_cart_items), new Action<cart_item>(this.detach_cart_items));
-			this._customer = default(EntityRef<customer>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shopping_cart_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long shopping_cart_id
-		{
-			get
-			{
-				return this._shopping_cart_id;
-			}
-			set
-			{
-				if ((this._shopping_cart_id != value))
-				{
-					this.Onshopping_cart_idChanging(value);
-					this.SendPropertyChanging();
-					this._shopping_cart_id = value;
-					this.SendPropertyChanged("shopping_cart_id");
-					this.Onshopping_cart_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total_items", DbType="Int NOT NULL")]
-		public int total_items
-		{
-			get
-			{
-				return this._total_items;
-			}
-			set
-			{
-				if ((this._total_items != value))
-				{
-					this.Ontotal_itemsChanging(value);
-					this.SendPropertyChanging();
-					this._total_items = value;
-					this.SendPropertyChanged("total_items");
-					this.Ontotal_itemsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total_price", DbType="Float NOT NULL")]
-		public double total_price
-		{
-			get
-			{
-				return this._total_price;
-			}
-			set
-			{
-				if ((this._total_price != value))
-				{
-					this.Ontotal_priceChanging(value);
-					this.SendPropertyChanging();
-					this._total_price = value;
-					this.SendPropertyChanged("total_price");
-					this.Ontotal_priceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt")]
-		public System.Nullable<long> customer_id
-		{
-			get
-			{
-				return this._customer_id;
-			}
-			set
-			{
-				if ((this._customer_id != value))
-				{
-					if (this._customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncustomer_idChanging(value);
-					this.SendPropertyChanging();
-					this._customer_id = value;
-					this.SendPropertyChanged("customer_id");
-					this.Oncustomer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="shopping_cart_cart_item", Storage="_cart_items", ThisKey="shopping_cart_id", OtherKey="shopping_cart_id")]
-		public EntitySet<cart_item> cart_items
-		{
-			get
-			{
-				return this._cart_items;
-			}
-			set
-			{
-				this._cart_items.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_shopping_cart", Storage="_customer", ThisKey="customer_id", OtherKey="customer_id", IsForeignKey=true)]
-		public customer customer
-		{
-			get
-			{
-				return this._customer.Entity;
-			}
-			set
-			{
-				customer previousValue = this._customer.Entity;
-				if (((previousValue != value) 
-							|| (this._customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._customer.Entity = null;
-						previousValue.shopping_carts.Remove(this);
-					}
-					this._customer.Entity = value;
-					if ((value != null))
-					{
-						value.shopping_carts.Add(this);
-						this._customer_id = value.customer_id;
-					}
-					else
-					{
-						this._customer_id = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("customer");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_cart_items(cart_item entity)
-		{
-			this.SendPropertyChanging();
-			entity.shopping_cart = this;
-		}
-		
-		private void detach_cart_items(cart_item entity)
-		{
-			this.SendPropertyChanging();
-			entity.shopping_cart = null;
 		}
 	}
 }

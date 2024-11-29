@@ -60,8 +60,9 @@
             this.pnlSidebar.Controls.Add(this.btnDashboardPage);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(350, 822);
+            this.pnlSidebar.Size = new System.Drawing.Size(262, 609);
             this.pnlSidebar.TabIndex = 0;
             // 
             // btnCusManaPage
@@ -72,9 +73,16 @@
             this.btnCusManaPage.ForeColor = System.Drawing.Color.White;
             this.btnCusManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnCusManaPage.Image")));
             this.btnCusManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+<<<<<<< HEAD
             this.btnCusManaPage.Location = new System.Drawing.Point(0, 290);
             this.btnCusManaPage.Name = "btnCusManaPage";
             this.btnCusManaPage.Size = new System.Drawing.Size(350, 79);
+=======
+            this.btnCusManaPage.Location = new System.Drawing.Point(0, 236);
+            this.btnCusManaPage.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCusManaPage.Name = "btnCusManaPage";
+            this.btnCusManaPage.Size = new System.Drawing.Size(262, 64);
+>>>>>>> xoenxoen
             this.btnCusManaPage.TabIndex = 8;
             this.btnCusManaPage.Text = "    Customers Management";
             this.btnCusManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -85,10 +93,11 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(0, 784);
+            this.lblUsername.Location = new System.Drawing.Point(0, 577);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.lblUsername.Size = new System.Drawing.Size(88, 38);
+            this.lblUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 16);
+            this.lblUsername.Size = new System.Drawing.Size(69, 32);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Welcome, ";
             // 
@@ -100,9 +109,10 @@
             this.btnRepStaPage.ForeColor = System.Drawing.Color.White;
             this.btnRepStaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnRepStaPage.Image")));
             this.btnRepStaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRepStaPage.Location = new System.Drawing.Point(0, 545);
+            this.btnRepStaPage.Location = new System.Drawing.Point(0, 443);
+            this.btnRepStaPage.Margin = new System.Windows.Forms.Padding(2);
             this.btnRepStaPage.Name = "btnRepStaPage";
-            this.btnRepStaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnRepStaPage.Size = new System.Drawing.Size(262, 64);
             this.btnRepStaPage.TabIndex = 7;
             this.btnRepStaPage.Text = "    Reports and Statistics";
             this.btnRepStaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -111,9 +121,10 @@
             // pbLogo
             // 
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(101, 7);
+            this.pbLogo.Location = new System.Drawing.Point(76, 6);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(142, 104);
+            this.pbLogo.Size = new System.Drawing.Size(106, 84);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
@@ -126,9 +137,10 @@
             this.btnCateManaPage.ForeColor = System.Drawing.Color.White;
             this.btnCateManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnCateManaPage.Image")));
             this.btnCateManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCateManaPage.Location = new System.Drawing.Point(0, 460);
+            this.btnCateManaPage.Location = new System.Drawing.Point(0, 374);
+            this.btnCateManaPage.Margin = new System.Windows.Forms.Padding(2);
             this.btnCateManaPage.Name = "btnCateManaPage";
-            this.btnCateManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnCateManaPage.Size = new System.Drawing.Size(262, 64);
             this.btnCateManaPage.TabIndex = 6;
             this.btnCateManaPage.Text = "    Categories Management";
             this.btnCateManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,9 +154,10 @@
             this.btnProManaPage.ForeColor = System.Drawing.Color.White;
             this.btnProManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnProManaPage.Image")));
             this.btnProManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProManaPage.Location = new System.Drawing.Point(0, 375);
+            this.btnProManaPage.Location = new System.Drawing.Point(0, 305);
+            this.btnProManaPage.Margin = new System.Windows.Forms.Padding(2);
             this.btnProManaPage.Name = "btnProManaPage";
-            this.btnProManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnProManaPage.Size = new System.Drawing.Size(262, 64);
             this.btnProManaPage.TabIndex = 5;
             this.btnProManaPage.Text = "    Products Management";
             this.btnProManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -158,9 +171,10 @@
             this.btnEmpManaPage.ForeColor = System.Drawing.Color.White;
             this.btnEmpManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpManaPage.Image")));
             this.btnEmpManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpManaPage.Location = new System.Drawing.Point(0, 205);
+            this.btnEmpManaPage.Location = new System.Drawing.Point(0, 167);
+            this.btnEmpManaPage.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmpManaPage.Name = "btnEmpManaPage";
-            this.btnEmpManaPage.Size = new System.Drawing.Size(350, 79);
+            this.btnEmpManaPage.Size = new System.Drawing.Size(262, 64);
             this.btnEmpManaPage.TabIndex = 4;
             this.btnEmpManaPage.Text = "    Employees Management";
             this.btnEmpManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -174,9 +188,10 @@
             this.btnDashboardPage.ForeColor = System.Drawing.Color.White;
             this.btnDashboardPage.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboardPage.Image")));
             this.btnDashboardPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboardPage.Location = new System.Drawing.Point(0, 120);
+            this.btnDashboardPage.Location = new System.Drawing.Point(0, 98);
+            this.btnDashboardPage.Margin = new System.Windows.Forms.Padding(2);
             this.btnDashboardPage.Name = "btnDashboardPage";
-            this.btnDashboardPage.Size = new System.Drawing.Size(350, 79);
+            this.btnDashboardPage.Size = new System.Drawing.Size(262, 64);
             this.btnDashboardPage.TabIndex = 3;
             this.btnDashboardPage.Text = "    Dashboard";
             this.btnDashboardPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,9 +206,14 @@
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+<<<<<<< HEAD
             this.btnLogout.Location = new System.Drawing.Point(1384, 0);
+=======
+            this.btnLogout.Location = new System.Drawing.Point(624, 0);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> xoenxoen
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(190, 48);
+            this.btnLogout.Size = new System.Drawing.Size(142, 39);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "   Log out";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -205,9 +225,14 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(350, 0);
+            this.panel2.Location = new System.Drawing.Point(262, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
+<<<<<<< HEAD
             this.panel2.Size = new System.Drawing.Size(1574, 48);
+=======
+            this.panel2.Size = new System.Drawing.Size(766, 39);
+>>>>>>> xoenxoen
             this.panel2.TabIndex = 3;
             // 
             // label1
@@ -216,8 +241,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(345, 48);
+            this.label1.Size = new System.Drawing.Size(259, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "Fast Food Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,20 +251,30 @@
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(350, 48);
+            this.pnlMain.Location = new System.Drawing.Point(262, 39);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMain.Name = "pnlMain";
+<<<<<<< HEAD
             this.pnlMain.Size = new System.Drawing.Size(1574, 774);
+=======
+            this.pnlMain.Size = new System.Drawing.Size(766, 570);
+>>>>>>> xoenxoen
             this.pnlMain.TabIndex = 4;
             // 
             // Frm_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1924, 822);
+=======
+            this.ClientSize = new System.Drawing.Size(1028, 609);
+>>>>>>> xoenxoen
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlSidebar);
             this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frm_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Dashboard";
