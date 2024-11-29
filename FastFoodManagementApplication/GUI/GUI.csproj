@@ -68,11 +68,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddACustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddACustomer.Designer.cs">
+      <DependentUpon>AddACustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Config.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Config.Designer.cs">
       <DependentUpon>Frm_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_CustomersManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CustomersManagement.Designer.cs">
+      <DependentUpon>Frm_CustomersManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Dashboard.cs">
       <SubType>Form</SubType>
@@ -104,6 +116,12 @@
     <Compile Include="Frm_AddAUser.Designer.cs">
       <DependentUpon>Frm_AddAUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_ProductsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ProductsManagement.Designer.cs">
+      <DependentUpon>Frm_ProductsManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_RolesManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,8 +130,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddACustomer.resx">
+      <DependentUpon>AddACustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Config.resx">
       <DependentUpon>Frm_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CustomersManagement.resx">
+      <DependentUpon>Frm_CustomersManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>

@@ -22,10 +22,10 @@ namespace GUI
 
         private void BtnCusManaPage_Click(object sender, EventArgs e)
         {
-            Frm_EmployeesManagement f = new Frm_EmployeesManagement();
+            Frm_CustomersManagement f = new Frm_CustomersManagement();
             OpenChildForm(f);
             ClearButtonBackColor();
-            btnEmpManaPage.BackColor = Color.FromArgb(178, 8, 55);
+            btnCusManaPage.BackColor = Color.FromArgb(178, 8, 55);
         }
 
         private void BtnEmpManaPage_Click(object sender, EventArgs e)
@@ -81,7 +81,5 @@ namespace GUI
         {
             lblUsername.Text += username;
         }
-
-
     }
 }

@@ -27,8 +27,8 @@ namespace BLL
         {
             string hashPassword = PasswordHelper.HashPassword(password);
             admin e = adminDAL.FindAdminByUsername(username);
-            
-            return (e != null && PasswordHelper.VerifyPassword(password, e.password) ? 
+
+            return (e != null && PasswordHelper.VerifyPassword(password, e.password) ?
                     LoginResult.Success : LoginResult.Invalid);
         }
 
