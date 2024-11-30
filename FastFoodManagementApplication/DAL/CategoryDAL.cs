@@ -12,6 +12,10 @@ namespace DAL
         private FastFoodManagementDBDataContext db = new FastFoodManagementDBDataContext();
         public CategoryDAL() { }
 
+        public List<category> FindAllCategories()
+        {
+            return db.categories.Select(c => c).ToList();
+        }
         public IQueryable<object> GetAllCategories()
         {
             var query = from c in db.categories
@@ -30,15 +34,27 @@ namespace DAL
         {
             try
             {
-                category newCategory = new category
-                {
-                    name = name,
-                    is_activated = isActivated,
-                    is_deleted = false 
-                };
+                var existingCategory = db.categories.FirstOrDefault(c => c.name == name && c.is_deleted == true);
 
-                db.categories.InsertOnSubmit(newCategory);
-                db.SubmitChanges();
+                if (existingCategory != null)
+                {
+                    existingCategory.is_deleted = false;
+                    existingCategory.is_activated = true;
+
+                    db.SubmitChanges();
+                }
+                else
+                {
+                    category newCategory = new category
+                    {
+                        name = name,
+                        is_activated = isActivated,
+                        is_deleted = false 
+                    };
+
+                    db.categories.InsertOnSubmit(newCategory);
+                    db.SubmitChanges();
+                }
                 return true;
             }
             catch (Exception)
@@ -46,6 +62,7 @@ namespace DAL
                 return false;
             }
         }
+
 
         public bool UpdateCategory(long id, string name, bool isActivated)
         {
@@ -88,5 +105,9 @@ namespace DAL
             }
         }
 
+        public category FindRoleByCategoryName(string categoryName)
+        {
+            return db.categories.FirstOrDefault(r => r.name.Equals(categoryName));
+        }
     }
 }
