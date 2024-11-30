@@ -26,8 +26,9 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=XOENXOEN\\XOEN;Initial Catalog=FastFoodManagementDB;Integrated Securit" +
-            "y=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN\\QUIN;Initial Catalog=FastFoodManagementDB;Integrated Security=T" +
+            "rue;")]
+
         public string FastFoodManagementDBConnectionString {
             get {
                 return ((string)(this["FastFoodManagementDBConnectionString"]));
