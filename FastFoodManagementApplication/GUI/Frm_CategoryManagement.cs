@@ -119,7 +119,7 @@ namespace GUI
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             string name = txtCategoryName.Text.Trim();
-            bool isActivated = chkIsActivated.Checked; 
+            bool isActivated = chkIsActivated.Checked;
 
             if (string.IsNullOrEmpty(name))
             {
@@ -133,7 +133,7 @@ namespace GUI
                 if (result)
                 {
                     MessageBox.Show("Category added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadCategoryList(); 
+                    LoadCategoryList();
                 }
                 else
                 {

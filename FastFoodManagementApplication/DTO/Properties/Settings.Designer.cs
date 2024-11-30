@@ -28,6 +28,7 @@ namespace DTO.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN\\QUIN;Initial Catalog=FastFoodManagementDB;Integrated Security=T" +
             "rue;")]
+
         public string FastFoodManagementDBConnectionString {
             get {
                 return ((string)(this["FastFoodManagementDBConnectionString"]));
