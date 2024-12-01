@@ -31,5 +31,14 @@ namespace BLL
             return categoryDAL.DeleteCategory(id);
         }
 
+        public List<category> FindAllCategories()
+        {
+            return categoryDAL.FindAllCategories();
+        }
+
+        public category FindRoleByCategoryName(string categoryName)
+        {
+            return categoryDAL.FindRoleByCategoryName(categoryName);
+        }
     }
 }
