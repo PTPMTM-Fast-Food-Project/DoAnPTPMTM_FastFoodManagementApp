@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminBLL.cs" />
+    <Compile Include="DashboardBLL.cs" />
     <Compile Include="OrderBLL.cs" />
     <Compile Include="PermissionBLL.cs" />
     <Compile Include="CategoryBLL.cs" />
