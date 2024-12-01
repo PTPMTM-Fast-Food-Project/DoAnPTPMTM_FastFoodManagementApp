@@ -60,7 +60,7 @@
                             <td class="thumbnail-img">
                                 <a th:href="@{/product-detail/{id}(id = ${cartItem.product.id})}">
                                     <img class="img-fluid"
-                                         th:src="'data:image/jepg;base64,' + ${cartItem.product.image}" alt=""/>
+                                    th:src="@{/images/product/} + ${cartItem.product.image}" alt=""/>
                                 </a>
                             </td>
                             <td class="name-pr">

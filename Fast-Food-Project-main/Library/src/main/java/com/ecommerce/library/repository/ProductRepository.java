@@ -20,23 +20,23 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             " where p.category.name = ?1 and p.is_activated = true and p.is_deleted = false")
     List<Product> findAllByCategory(String category);
 
-    @Query(value = "select p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
-            "from products p where p.is_activated = true and p.is_deleted = false order by rand() limit 9", nativeQuery = true)
+    @Query(value = "select top 9 p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
+            "from products p where p.is_activated = 1 and p.is_deleted = 0 order by NEWID()", nativeQuery = true)
     List<Product> randomProduct();
 
-    @Query(value = "select p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
-            "from products p where p.is_deleted = false and p.is_activated = true limit 4", nativeQuery = true)
+    @Query(value = "select top 4 p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
+            "from products p where p.is_deleted = 0 and p.is_activated = 1", nativeQuery = true)
     List<Product> listViewProduct();
 
     @Query(value = "select p from Product p inner join Category c on c.id = ?1 and p.category.id = ?1 where p.is_activated = true and p.is_deleted = false")
     List<Product> getProductByCategoryId(Long id);
 
-    @Query(value = "select p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
-            "from products p where p.is_deleted = false and p.is_activated = true order by p.cost_price desc limit 9", nativeQuery = true)
+    @Query(value = "select top 9 p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
+            "from products p where p.is_deleted = 0 and p.is_activated = 1 order by p.cost_price desc", nativeQuery = true)
     List<Product> filterHighProducts();
 
-    @Query(value = "select p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
-            "from products p where p.is_deleted = false and p.is_activated = true order by p.cost_price asc limit 9", nativeQuery = true)
+    @Query(value = "select top 9 p.product_id, p.name, p.description, p.current_quantity, p.cost_price, p.category_id, p.sale_price, p.image, p.is_activated, p.is_deleted " +
+            "from products p where p.is_deleted = 0 and p.is_activated = 1 order by p.cost_price asc", nativeQuery = true)
     List<Product> filterLowerProducts();
 
     @Query("select p from Product p where p.name like %?1% or p.description like %?1%")
