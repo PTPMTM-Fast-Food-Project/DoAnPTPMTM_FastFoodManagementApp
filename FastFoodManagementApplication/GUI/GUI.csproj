@@ -300,6 +300,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report_Order.rdlc" />
     <None Include="FastFoodManagementDBDataSet.xsc">
@@ -332,6 +333,11 @@
     <Folder Include="Resources\Product\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\1.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\6.png" />
     <Content Include="Resources\configuration.png" />
     <Content Include="Resources\fast-food-login.jpg" />
     <Content Include="Resources\forgot-password.png" />

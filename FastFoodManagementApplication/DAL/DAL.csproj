@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDAL.cs" />
+    <Compile Include="DashboardDAL.cs" />
     <Compile Include="OrderDAL.cs" />
     <Compile Include="PermissionDAL.cs" />
     <Compile Include="CategoryDAL.cs" />

@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
 
 namespace GUI
 {
     public partial class Frm_Dashboard : Form
     {
+        private DashboardBLL dashboardBLL = new DashboardBLL();
+        private OrderBLL orderBLL = new OrderBLL();
         public Frm_Dashboard()
         {
             InitializeComponent();
@@ -20,6 +24,8 @@ namespace GUI
             btnCusManaPage.Click += BtnCusManaPage_Click;
             btnCateManaPage.Click += BtnCateManaPage_Click;
             btnProManaPage.Click += BtnProManaPage_Click;
+
+            Load();
         }
 
         private void BtnProManaPage_Click(object sender, EventArgs e)
@@ -98,6 +104,41 @@ namespace GUI
         public void SetUsername(string username)
         {
             lblUsername.Text += username;
+        }
+        private void Load()
+        {
+            // Lấy số lượng khách hàng
+            labelUser.Text = dashboardBLL.GetCustomerCount().ToString();
+
+            // Lấy số lượng đơn hàng
+            labelOrder.Text = dashboardBLL.GetOrderCount().ToString();
+
+            // Lấy số lượng sản phẩm
+            labelProduct.Text = dashboardBLL.GetProductCount().ToString();
+
+            // Giả sử 'orders' là danh sách các đơn hàng (IEnumerable<OrderDTO>)
+            var order = orderBLL.GetAllOrders(); // Phương thức này cần trả về danh sách các đơn hàng
+            labelPriceTotal.Text = dashboardBLL.CalculateTotalSales(order).ToString("C"); // Định dạng tiền tệ
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPriceTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelProduct_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
