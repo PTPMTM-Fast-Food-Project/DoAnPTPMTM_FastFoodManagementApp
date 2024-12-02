@@ -165,6 +165,11 @@
 		}
 	});
 
+	// Handle hidden-show chatbot
+	$("#toggleButton").click(function() {
+		$("#toggleElement").toggleClass("hidden");
+	});
+
 	/* ..............................................
 	   Scroll
 	   ................................................. */
@@ -211,6 +216,36 @@
 	$(".brand-box").niceScroll({
 		cursorcolor: "#9b9b9c",
 	});
-	
-	
 }(jQuery));
+
+// Handle chatbot reply
+function sendMessage() {
+	const BASE_URL = "http://localhost:9966/shop";
+    const userMessage = $("#userInput").val();
+    $("#messages").append(`<br clear="both">
+                            <div class="item right">
+                                <div class="msg">
+                                    <p>${userMessage}</p>
+                                </div>
+                            </div>`);
+
+    $.ajax({
+        url: `${BASE_URL}/api/chatbot/get-reply`,
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({ message: userMessage }),
+        success: function (data) {
+            $("#messages").append(`<div class="item">
+                                     <div class="icon">
+                                       <i class="fa-solid fa-robot"></i>
+                                     </div>
+                                     <div class="msg">
+                                         <p>${data.reply}</p>
+                                     </div>
+                                   </div>`);
+        },
+        error: function (xhr, status, error) {
+            console.error("Error:", status, error);
+        }
+    });
+}

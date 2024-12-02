@@ -1,0 +1,44 @@
+Menu_Inquiry	Có món gì hôm nay không?
+Menu_Inquiry	Cho tôi xem menu.
+Menu_Inquiry	Hôm nay có khuyến mãi không?
+Menu_Inquiry	Tôi muốn biết các món ăn nhanh nào đang có.
+Order_Placement	Tôi muốn đặt một phần gà rán.
+Order_Placement	Làm sao để đặt món?
+Order_Placement	Đặt 2 cái pizza và 1 coca.
+Order_Placement	Tôi có thể đặt đồ ăn qua đây không?
+Delivery_Time_Inquiry	Thức ăn sẽ giao trong bao lâu?
+Delivery_Time_Inquiry	Khi nào đồ ăn tới?
+Delivery_Time_Inquiry	Giao hàng mất bao nhiêu thời gian?
+Delivery_Time_Inquiry	Tôi cần biết thời gian giao hàng.
+Payment_Method_Inquiry	Tôi có thể thanh toán bằng thẻ không?
+Payment_Method_Inquiry	Hình thức thanh toán là gì?
+Payment_Method_Inquiry	Chỗ bạn có hỗ trợ trả tiền mặt không?
+Payment_Method_Inquiry	Thanh toán online như thế nào?
+Order_Status_Inquiry	Đơn hàng của tôi đâu rồi?
+Order_Status_Inquiry	Kiểm tra trạng thái đơn hàng.
+Order_Status_Inquiry	Đơn của tôi đã giao chưa?
+Order_Status_Inquiry	Tôi muốn biết trạng thái đơn hàng của mình.
+Product_Recommendation	Món nào ngon nhất ở đây?
+Product_Recommendation	Bạn gợi ý món ăn nào đi.
+Product_Recommendation	Món nào đang được yêu thích nhất?
+Product_Recommendation	Tôi không biết chọn món nào, bạn giúp nhé.
+Store_Locations_Inquiry	Chi nhánh gần nhất ở đâu?
+Store_Locations_Inquiry	Tôi muốn tìm cửa hàng của bạn.
+Store_Locations_Inquiry	Làm sao để đến cửa hàng?
+Store_Locations_Inquiry	Cửa hàng ở đâu?
+Feedback_or_Complaint	Đồ ăn giao chậm quá.
+Feedback_or_Complaint	Tôi muốn gửi ý kiến đóng góp.
+Feedback_or_Complaint	Có chỗ nào để phản hồi không?
+Feedback_or_Complaint	Đơn hàng bị sai rồi.
+Promotion_Inquiry	Hôm nay có khuyến mãi gì không?
+Promotion_Inquiry	Chỗ bạn có giảm giá không?
+Promotion_Inquiry	Có chương trình ưu đãi nào không?
+General_Greeting	Xin chào.
+General_Greeting	Hi.
+General_Greeting	Chào bot.
+Goodbye	Tạm biệt.
+Goodbye	Cảm ơn nhé.
+Goodbye	Bye.
+Unknown	Tôi không hiểu lắm.
+Unknown	Làm cái này như thế nào?
+Unknown	?

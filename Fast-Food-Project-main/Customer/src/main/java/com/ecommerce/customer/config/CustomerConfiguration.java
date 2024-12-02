@@ -45,7 +45,7 @@ public class CustomerConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests( author ->
                         author.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                                .requestMatchers("/*", "/product-detail/**").permitAll()
+                                .requestMatchers("/*", "/product-detail/**", "/api/**").permitAll()
                                 .requestMatchers("/shop/**", "/find-products/**").hasAuthority("CUSTOMER")
                 )
                 .formLogin(login ->

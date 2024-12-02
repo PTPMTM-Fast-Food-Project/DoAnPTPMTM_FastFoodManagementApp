@@ -1,0 +1,156 @@
+[
+    {
+        "intent": "Menu_Inquiry",
+        "patterns": [
+            "Có món gì hôm nay không?",
+            "Cho tôi xem menu.",
+            "Hôm nay có khuyến mãi không?",
+            "Tôi muốn biết các món ăn nhanh nào đang có."
+        ],
+        "responses": [
+            "Chào bạn! Menu hôm nay gồm: Pizza, Gà rán, và Burger. Bạn cần thêm thông tin gì không?",
+            "Đây là menu hôm nay của chúng tôi: http://localhost:9966/shop/menu.",
+            "Bạn có thể kiểm tra các món ăn kèm ưu đãi tại đây: [link khuyến mãi]."
+        ]
+    },
+    {
+        "intent": "Order_Placement",
+        "patterns": [
+            "Tôi muốn đặt một phần gà rán.",
+            "Làm sao để đặt món?",
+            "Đặt 2 cái pizza và 1 coca.",
+            "Tôi có thể đặt đồ ăn qua đây không?"
+        ],
+        "responses": [
+            "Bạn vui lòng cho biết chi tiết món ăn và số lượng để tôi hỗ trợ đặt hàng nhé!",
+            "Chúng tôi hỗ trợ đặt món qua chatbot. Hãy nhập món bạn muốn đặt.",
+            "Vui lòng điền thông tin đặt hàng tại đây: [form đặt hàng]."
+        ]
+    },
+    {
+        "intent": "Delivery_Time_Inquiry",
+        "patterns": [
+            "Thức ăn sẽ giao trong bao lâu?",
+            "Khi nào đồ ăn tới?",
+            "Giao hàng mất bao nhiêu thời gian?",
+            "Tôi cần biết thời gian giao hàng."
+        ],
+        "responses": [
+            "Thời gian giao hàng dự kiến từ 30-45 phút tùy vào khoảng cách.",
+            "Đơn hàng của bạn sẽ đến trong vòng 40 phút. Bạn cần hỗ trợ gì thêm không?"
+        ]
+    },
+    {
+        "intent": "Payment_Method_Inquiry",
+        "patterns": [
+            "Tôi có thể thanh toán bằng thẻ không?",
+            "Hình thức thanh toán là gì?",
+            "Chỗ bạn có hỗ trợ trả tiền mặt không?",
+            "Thanh toán online như thế nào?"
+        ],
+        "responses": [
+            "Chúng tôi hỗ trợ thanh toán qua tiền mặt, thẻ tín dụng, và ví điện tử.",
+            "Bạn có thể thanh toán qua ZaloPay, Momo, hoặc chuyển khoản ngân hàng."
+        ]
+    },
+    {
+        "intent": "Order_Status_Inquiry",
+        "patterns": [
+            "Đơn hàng của tôi đâu rồi?",
+            "Kiểm tra trạng thái đơn hàng.",
+            "Đơn của tôi đã giao chưa?",
+            "Tôi muốn biết trạng thái đơn hàng của mình."
+        ],
+        "responses": [
+            "Vui lòng cung cấp mã đơn hàng để tôi kiểm tra giúp bạn.",
+            "Bạn có thể tra cứu trạng thái đơn hàng tại đây: [link tra cứu]."
+        ]
+    },
+    {
+        "intent": "Product_Recommendation",
+        "patterns": [
+            "Món nào ngon nhất ở đây?",
+            "Bạn gợi ý món ăn nào đi.",
+            "Món nào đang được yêu thích nhất?",
+            "Tôi không biết chọn món nào, bạn giúp nhé."
+        ],
+        "responses": [
+            "Món được yêu thích nhất hiện tại là Pizza đặc biệt và Gà rán giòn cay.",
+            "Bạn có thể thử combo pizza và coca, đây là món bán chạy nhất."
+        ]
+    },
+    {
+        "intent": "Store_Locations_Inquiry",
+        "patterns": [
+            "Chi nhánh gần nhất ở đâu?",
+            "Tôi muốn tìm cửa hàng của bạn.",
+            "Làm sao để đến cửa hàng?",
+            "Cửa hàng ở đâu?"
+        ],
+        "responses": [
+            "Bạn vui lòng nhập vị trí hiện tại, tôi sẽ gửi bạn chi nhánh gần nhất.",
+            "Bạn có thể xem danh sách các cửa hàng tại đây: [link cửa hàng]."
+        ]
+    },
+    {
+        "intent": "Feedback_or_Complaint",
+        "patterns": [
+            "Đồ ăn giao chậm quá.",
+            "Tôi muốn gửi ý kiến đóng góp.",
+            "Có chỗ nào để phản hồi không?",
+            "Đơn hàng bị sai rồi."
+        ],
+        "responses": [
+            "Rất xin lỗi bạn! Vui lòng cung cấp mã đơn hàng để chúng tôi kiểm tra.",
+            "Cảm ơn phản hồi của bạn, chúng tôi sẽ liên hệ sớm để giải quyết."
+        ]
+    },
+    {
+        "intent": "Promotion_Inquiry",
+        "patterns": [
+            "Hôm nay có khuyến mãi gì không?",
+            "Chỗ bạn có giảm giá không?",
+            "Có chương trình ưu đãi nào không?"
+        ],
+        "responses": [
+            "Hôm nay chúng tôi đang có chương trình 'Mua 1 tặng 1' áp dụng cho combo Gà rán.",
+            "Bạn có thể xem thêm chi tiết ưu đãi tại đây: [link ưu đãi]."
+        ]
+    },
+    {
+        "intent": "General_Greeting",
+        "patterns": [
+            "Xin chào.",
+            "Hi.",
+            "Chào bot."
+        ],
+        "responses": [
+            "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?",
+            "Chào mừng bạn đến với MainlandPrime! Bạn cần hỗ trợ gì không?"
+        ]
+    },
+    {
+        "intent": "Goodbye",
+        "patterns": [
+            "Tạm biệt.",
+            "Cảm ơn nhé.",
+            "Bye."
+        ],
+        "responses": [
+            "Cảm ơn bạn đã ghé thăm! Hẹn gặp lại.",
+            "Chúc bạn một ngày vui vẻ! Tạm biệt."
+        ]
+    },
+    {
+        "intent": "Unknown",
+        "patterns": [
+            "Tôi không hiểu lắm.",
+            "Làm cái này như thế nào?",
+            "?"
+        ],
+        "responses": [
+            "Xin lỗi, tôi chưa hiểu câu hỏi của bạn. Bạn có thể nói rõ hơn không?",
+            "Tôi không chắc về điều đó. Bạn vui lòng thử lại hoặc liên hệ hotline: 0779009487."
+        ]
+    }
+]
