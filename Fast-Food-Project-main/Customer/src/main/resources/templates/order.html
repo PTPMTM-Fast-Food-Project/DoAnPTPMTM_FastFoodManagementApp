@@ -35,13 +35,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div th:if="${success}" class="text-center alert-success alert">
+                <!-- <div th:if="${success}" class="text-center alert-success alert">
                     <p th:text="${success}"></p>
-                </div>
+                </div> -->
                 <p class="text-center" th:if="${size == 0}">
                     <i style="font-size: 30px"
                        class="text-info font-weight-bold text-center">
-                        You have no orders placed
+                        You have no orders placed!
                     </i>
                 </p>
                 <div class="table-main table-responsive" th:if="${size > 0}">
@@ -51,7 +51,6 @@
                             <th class="order-date">Order Date</th>
                             <th>Delivery Date</th>
                             <th class="price-pr">Order Status</th>
-
                             <th class="quantity-box">Quantity</th>
                             <th>Total Price</th>
                             <th class="total-pr">Payment Method</th>
@@ -67,20 +66,21 @@
                                 <a th:if = "${order.accept != null}" href="#">
                                     [(${order.deliveryDate})]
                                 </a>
-                                <a th:if = "${order.accept == null}"><p>Pending</p> </a>
+                                <a th:if = "${order.accept == null}"><p></p> </a>
                             </td>
                             <td class="price-pr">
                                 <p th:text="${order.orderStatus}"></p>
                             </td>
                             <td class="quantity-box" th:text="${order.quantity}"> </td>
                             <td class="total-pr">
-                                <p style="color: red">$ [(${order.totalPrice})]</p>
+                                <p style="color: red">$ [[${#numbers.formatDecimal(order.totalPrice, 1, '2', 'COMMA') }]]</p>
                             </td>
                             <td class="total-pr" style="color: black">
-                                <span></span>[(${order.paymentMethod})]</span>
+                                <span>[(${order.paymentMethod})]</span>
                             </td>
                             <td>
-                                <a th:href="@{/cancel-order(id = ${order.id})}" class="button-cancel">Cancel</a>
+                                <a th:href="@{/order-detail/} + ${order.id}" class="btn btn-info">View Detail</a>
+                                <a th:href="@{/cancel-order(id = ${order.id})}" class="btn btn-danger">Cancel</a>
                             </td>
                         </tr>
                         </tbody>

@@ -70,8 +70,8 @@ namespace GUI
             // Get all orders using the BLL
             var allOrders = orderBLL.GetOrdersReport(fromDate, toDate); // Retrieve orders as a list
 
-            WordExport dt = new WordExport();
-            dt.BCTK(fromDate, toDate, allOrders);
+            //WordExport dt = new WordExport();
+            //dt.BCTK(fromDate, toDate, allOrders);
         }
 
         private void buttonExcel_Click(object sender, EventArgs e)
@@ -83,10 +83,10 @@ namespace GUI
 
 
             // Proceed to export the filtered orders
-            ExcelExport excel = new ExcelExport();
+            //ExcelExport excel = new ExcelExport();
             string path = string.Empty;
 
-            excel.ExportOrder(allOrders, ref path, false);
+            //excel.ExportOrder(allOrders, ref path, false);
 
             // Confirm if the user wants to open the exported file
             if (!string.IsNullOrEmpty(path) &&

@@ -4,6 +4,7 @@ import com.ecommerce.library.dto.ProductDto;
 import com.ecommerce.library.model.Customer;
 import com.ecommerce.library.model.ShoppingCart;
 import com.ecommerce.library.service.CustomerService;
+import com.ecommerce.library.service.OrderService;
 import com.ecommerce.library.service.ProductService;
 import com.ecommerce.library.service.ShoppingCartService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,11 +20,14 @@ public class ShoppingCartController {
     private final CustomerService customerService;
     private final ShoppingCartService cartService;
     private final ProductService productService;
+    private final OrderService orderService;
 
-    public ShoppingCartController(CustomerService customerService, ShoppingCartService cartService, ProductService productService) {
+    public ShoppingCartController(CustomerService customerService, ShoppingCartService cartService, 
+                                ProductService productService, OrderService orderService) {
         this.customerService = customerService;
         this.cartService = cartService;
         this.productService = productService;
+        this.orderService = orderService;
     }
 
     @GetMapping("/cart")
@@ -36,6 +40,7 @@ public class ShoppingCartController {
         if (cart == null || cart.getTotalItems() == 0) {
             model.addAttribute("check", "You don't have any items in your cart!");
         } else {
+            orderService.resetCartItemQuantity(cart.getCartItems());
             model.addAttribute("grandTotal", cart.getTotalPrice());
             model.addAttribute("shoppingCart", cart);
             session.setAttribute("totalItems", cart.getTotalItems());

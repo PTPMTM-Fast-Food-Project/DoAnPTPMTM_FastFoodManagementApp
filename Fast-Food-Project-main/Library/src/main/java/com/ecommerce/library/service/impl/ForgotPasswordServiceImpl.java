@@ -3,7 +3,6 @@ package com.ecommerce.library.service.impl;
 import com.ecommerce.library.model.ForgotPasswordToken;
 import com.ecommerce.library.repository.ForgotPasswordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;

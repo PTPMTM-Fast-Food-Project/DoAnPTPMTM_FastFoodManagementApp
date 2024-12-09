@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ShoppingCartServiceImpl  implements ShoppingCartService {
@@ -26,13 +26,14 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService {
 
     private final CustomerService customerService;
 
-    public ShoppingCartServiceImpl(ShoppingCartRepository cartRepository, CartItemRepository itemRepository, CustomerService customerService) {
+    public ShoppingCartServiceImpl(ShoppingCartRepository cartRepository, CartItemRepository itemRepository, 
+                                    CustomerService customerService) {
         this.cartRepository = cartRepository;
         this.itemRepository = itemRepository;
         this.customerService = customerService;
     }
 
-    private CartItem find(Set<CartItem> cartItems, long productId) {
+    private CartItem find(List<CartItem> cartItems, long productId) {
         if (cartItems == null) {
             return null;
         }
@@ -60,7 +61,7 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService {
         return product;
     }
 
-    private int totalItem(Set<CartItem> cartItemList) {
+    private int totalItem(List<CartItem> cartItemList) {
         int totalItem = 0;
         for (CartItem item : cartItemList) {
             totalItem += item.getQuantity();
@@ -68,7 +69,7 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService {
         return totalItem;
     }
 
-    private double totalPrice(Set<CartItem> cartItemList) {
+    private double totalPrice(List<CartItem> cartItemList) {
         double totalPrice = 0.0;
         for (CartItem item : cartItemList) {
             totalPrice += item.getUnitPrice() * item.getQuantity();
@@ -85,7 +86,7 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService {
         if (shoppingCart == null) {
             shoppingCart = new ShoppingCart();
         }
-        Set<CartItem> cartItemList = shoppingCart.getCartItems();
+        List<CartItem> cartItemList = shoppingCart.getCartItems();
         CartItem cartItem = find(cartItemList, productDto.getId());
         Product product = transfer(productDto);
 
@@ -93,7 +94,7 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService {
 
         int itemQuantity = 0;
         if (cartItemList == null) {
-            cartItemList = new HashSet<>();
+            cartItemList = new ArrayList<>();
             cartItem = new CartItem();
             cartItem.setProduct(product);
             cartItem.setQuantity(quantity);
@@ -133,7 +134,7 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService {
     public ShoppingCart updateCart(ProductDto productDto, int quantity, String username) {
         Customer customer = customerService.findByUsername(username);
         ShoppingCart shoppingCart = customer.getCart();
-        Set<CartItem> cartItemList = shoppingCart.getCartItems();
+        List<CartItem> cartItemList = shoppingCart.getCartItems();
         CartItem item = find(cartItemList, productDto.getId());
 
         item.setQuantity(quantity);
@@ -151,7 +152,7 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService {
     public ShoppingCart removeItemFromCart(ProductDto productDto, String username) {
         Customer customer = customerService.findByUsername(username);
         ShoppingCart shoppingCart = customer.getCart();
-        Set<CartItem> cartItemList = shoppingCart.getCartItems();
+        List<CartItem> cartItemList = shoppingCart.getCartItems();
         CartItem item = find(cartItemList, productDto.getId());
 
         cartItemList.remove(item);

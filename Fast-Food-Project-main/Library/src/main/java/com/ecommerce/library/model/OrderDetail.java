@@ -18,13 +18,16 @@ public class OrderDetail {
     @JoinColumn(name = "product_id", referencedColumnName = "product_id")
     private Product product;
 
+    private int quantity;
+
     public OrderDetail() {
     }
 
-    public OrderDetail(Long id, Order order, Product product) {
+    public OrderDetail(Long id, Order order, Product product, int quantity) {
         this.id = id;
         this.order = order;
         this.product = product;
+        this.quantity = quantity;
     }
 
     public Long getId() {
@@ -49,5 +52,13 @@ public class OrderDetail {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

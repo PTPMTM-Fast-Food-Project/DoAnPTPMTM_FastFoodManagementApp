@@ -6,12 +6,16 @@ import com.ecommerce.library.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jakarta.servlet.http.HttpSession;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -47,16 +51,29 @@ public class OrderController {
             } else {
                 ShoppingCart cart = customerService.findByUsername(principal.getName()).getCart();
 
+                double grandTotal = 0.0;
+                for (CartItem cartItem : cart.getCartItems()) {
+                    grandTotal += (cartItem.getUnitPrice() * cartItem.getQuantity());
+                }
+
                 Country country = countryService.findById(Long.parseLong(customer.getCountry()));
                 customer.setCountry(country.getName());
                 model.addAttribute("customer", customer);
                 model.addAttribute("title", "Check-Out");
                 model.addAttribute("page", "Check-Out");
                 model.addAttribute("shoppingCart", cart);
-                model.addAttribute("grandTotal", cart.getTotalItems());
+                model.addAttribute("grandTotal", String.format("%.2f", grandTotal));
+                model.addAttribute("grandTotalWithTax", String.format("%.2f", grandTotal + 2.0));
                 return "checkout";
             }
         }
+    }
+
+    @PostMapping("/confirm-checkout")
+    public String getCheckoutPage(@ModelAttribute("shoppingCart") ShoppingCart cart) {
+        List<CartItem> cartItems = cart == null ? new ArrayList<>() : cart.getCartItems();
+        this.orderService.handleUpdateCartBeforeCheckout(cartItems);
+        return "redirect:/check-out";
     }
 
     @GetMapping("/orders")
@@ -93,10 +110,22 @@ public class OrderController {
             Order order = orderService.save(cart);
             session.removeAttribute("totalItems");
             model.addAttribute("order", order);
-            model.addAttribute("title", "Order Detail");
-            model.addAttribute("page", "Order Detail");
-            model.addAttribute("success", "Add order successfully");
-            return "order-detail";
+            model.addAttribute("title", "Order Successfully");
+            model.addAttribute("page", "Order Successfully");
+            return "order-success";
         }
+    }
+
+    @GetMapping("/order-detail/{id}")
+    public String orderSuccessPage(@PathVariable("id") Long orderId, Model model, Principal principal) {
+        if (principal == null) {
+            return "redirect:/login";
+        }
+        
+        Order order = this.orderService.getOrderById(orderId);
+        model.addAttribute("order", order);
+        model.addAttribute("title", "Order Detail");
+        model.addAttribute("page", "Order Detail");
+        return "order-detail";
     }
 }

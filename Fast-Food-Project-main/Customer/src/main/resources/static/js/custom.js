@@ -170,6 +170,89 @@
 		$("#toggleElement").toggleClass("hidden");
 	});
 
+	// Handle stock
+	$('.quantity .quan-inp').on('change', function () {
+		console.log("Sự kiện đã kích hoạt!");
+		const input = $(this);                 // Lấy input hiện tại
+		const maxStock = input.attr('data-stock');  // Lấy giá trị từ data-stock
+		const quantity = input.val();  // Lấy số lượng nhập vào
+		
+		console.log(maxStock, quantity);
+
+		if (quantity > maxStock) {
+			alert(`Số lượng vượt quá giới hạn! Tối đa: ${maxStock}`);
+			input.attr('value', 10);  // Reset về giá trị tối đa
+		} else if (quantity < 1 || isNaN(quantity)) {
+			alert('Số lượng phải lớn hơn 0!');
+			input.attr('value', 1);  // Reset về giá trị tối thiểu
+		}
+	});
+
+	// Handle Product Quantity
+	$('.quantity button').on('click', function () {
+        let change = 0;
+
+        var button = $(this);
+        var oldValue = button.parent().parent().find('input').val();
+        if (button.hasClass('btn-plus')) {
+            var newVal = parseFloat(oldValue) + 1;
+            change = 1;
+        } else {
+            if (oldValue > 1) {
+                var newVal = parseFloat(oldValue) - 1;
+                change = -1;
+            } else {
+                newVal = 1;
+            }
+        }
+        const input = button.parent().parent().find('input');
+        input.val(newVal);
+
+        //set form index
+        const index = input.attr("data-cart-detail-index")
+        const el = document.getElementById(`cartItems${index}.quantity`);
+		$(el).attr('value', newVal);
+		// console.log(el, $(el).val());
+		
+        //get price
+        const price = input.attr("data-cart-detail-price");
+        const id = input.attr("data-cart-detail-id");
+
+        const priceElement = $(`p[data-cart-detail-id='${id}']`);
+        if (priceElement) {
+            const newPrice = +price * newVal;
+            priceElement.text('$' + parseFloat(newPrice).toFixed(2));
+        }
+
+        //update total cart price
+        const totalPriceElement = $(`div[data-cart-total-price]`);
+        const totalPriceElementFinal = $(`div[data-cart-total-price-final]`);
+
+        if (totalPriceElement && totalPriceElement.length) {
+            const currentTotal = totalPriceElement.first().attr("data-cart-total-price");
+            let newTotal = +currentTotal;
+            if (change === 0) {
+                newTotal = +currentTotal;
+            } else {
+                newTotal = change * (+price) + (+currentTotal);
+            }
+
+            //reset change
+            change = 0;
+
+            //update
+            totalPriceElement?.each(function (index, element) {
+                //update text
+                $(totalPriceElement[index]).text('$' + parseFloat(newTotal).toFixed(2));
+                $(totalPriceElementFinal[index]).text('$' + (parseFloat(newTotal + 2.0).toFixed(2)));
+
+                //update data-attribute
+                $(totalPriceElement[index]).attr("data-cart-total-price", parseFloat(newTotal).toFixed(2));
+                $(totalPriceElementFinal[index]).attr("data-cart-total-price-final", (parseFloat(newTotal + 2.0).toFixed(1)));
+            });
+        }
+    });
+
 	/* ..............................................
 	   Scroll
 	   ................................................. */

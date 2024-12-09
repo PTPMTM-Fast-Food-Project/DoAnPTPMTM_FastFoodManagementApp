@@ -39,6 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                <h1 th:text="${'Order Code: ' + order.id}"></h1>
                 <div class="table-main table-responsive">
                     <table class="table">
                         <thead>
@@ -46,21 +47,25 @@
                             <th>Images</th>
                             <th>Product Name</th>
                             <th>Price</th>
+                            <th>Quantity</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="orderdetail : ${order.orderDetailList}">
+                        <tr th:each="orderDetail : ${order.orderDetailList}">
                             <td class="thumbnail-img">
                                 <a href="#">
                                     <img class="img-fluid"
-                                    th:src="@{/images/product/} + ${orderdetail.product.image}" alt=""/>
+                                    th:src="@{/images/product/} + ${orderDetail.product.image}" alt=""/>
                                 </a>
                             </td>
                             <td class="name-pr">
-                                <p th:text="${orderdetail.product.name}"></p>
+                                <p th:text="${orderDetail.product.name}"></p>
                             </td>
                             <td class="price-pr">
-                                <p th:text="'$' + ${orderdetail.product.costPrice}"></p>
+                                <p th:text="'$' + ${orderDetail.product.costPrice}"></p>
+                            </td>
+                            <td class="quantity">
+                                <p th:text="${orderDetail.quantity}"></p>
                             </td>
                         </tr>
                         </tbody>
@@ -72,8 +77,9 @@
                                 <h3>Order summary</h3>
                                 <div class="d-flex">
                                     <p>Total Quantity: [(${order.quantity})]</p>
-                                    <h4 class="ml-auto">Sub Total</h4>
-                                    <div class="ml-auto font-weight-bold" th:text="${order.totalPrice}"> </div>
+                                    <div class="ml-auto font-weight-bold">
+                                        <p>Total: $ [[${#numbers.formatDecimal(order.totalPrice, 1, '2', 'COMMA') }]]</p>
+                                    </div>
                                 </div>
                                 <hr class="my-1">
                             </div>

@@ -20,7 +20,6 @@ public interface ShoppingCartService {
 
     ShoppingCart combineCart(ShoppingCartDto cartDto, ShoppingCart cart);
 
-
     void deleteCartById(Long id);
 
     ShoppingCart getCart(String username);

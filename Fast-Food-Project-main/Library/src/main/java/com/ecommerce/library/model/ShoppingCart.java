@@ -2,8 +2,8 @@ package com.ecommerce.library.model;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "shopping_cart")
@@ -22,15 +22,15 @@ public class ShoppingCart {
     private int totalItems;
 
     @OneToMany(cascade = CascadeType.DETACH, mappedBy = "cart")
-    private Set<CartItem> cartItems;
+    private List<CartItem> cartItems;
 
     public ShoppingCart() {
-        this.cartItems = new HashSet<>();
+        this.cartItems = new ArrayList<>();
         this.totalItems = 0;
         this.totalPrice = 0.0;
     }
 
-    public ShoppingCart(Long id, Customer customer, double totalPrice, int totalItems, Set<CartItem> cartItems) {
+    public ShoppingCart(Long id, Customer customer, double totalPrice, int totalItems, List<CartItem> cartItems) {
         this.id = id;
         this.customer = customer;
         this.totalPrice = totalPrice;
@@ -70,11 +70,11 @@ public class ShoppingCart {
         this.totalItems = totalItems;
     }
 
-    public Set<CartItem> getCartItems() {
+    public List<CartItem> getCartItems() {
         return cartItems;
     }
 
-    public void setCartItems(Set<CartItem> cartItems) {
+    public void setCartItems(List<CartItem> cartItems) {
         this.cartItems = cartItems;
     }
 
