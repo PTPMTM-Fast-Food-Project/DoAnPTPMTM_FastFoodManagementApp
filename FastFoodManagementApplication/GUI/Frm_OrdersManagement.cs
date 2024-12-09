@@ -76,7 +76,7 @@ namespace GUI
                 textBoxDeliveryDate.Text = dataGridView1.CurrentRow.Cells["delivery_date"].Value.ToString();
                 comboBoxIsAccept.SelectedItem = dataGridView1.CurrentRow.Cells["is_accept"].Value.ToString();
                 textBoxOrderDate.Text = dataGridView1.CurrentRow.Cells["order_date"].Value.ToString();
-                comboBoxStatus.SelectedItem = dataGridView1.CurrentRow.Cells["order_status"].Value.ToString();
+                comboBoxStatus.Text = dataGridView1.CurrentRow.Cells["order_status"].Value.ToString();
                 textBoxPayment.Text = dataGridView1.CurrentRow.Cells["payment_method"].Value.ToString();
                 textBoxQuantity.Text = dataGridView1.CurrentRow.Cells["quantity"].Value.ToString();
                 textBoxTax.Text = dataGridView1.CurrentRow.Cells["tax"].Value.ToString();

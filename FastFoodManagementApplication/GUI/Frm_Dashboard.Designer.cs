@@ -58,6 +58,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnOrderManaPage = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.pnlSidebar.Controls.Add(this.btnOrderManaPage);
             this.pnlSidebar.Controls.Add(this.btnCusManaPage);
             this.pnlSidebar.Controls.Add(this.lblUsername);
             this.pnlSidebar.Controls.Add(this.btnRepStaPage);
@@ -123,7 +125,7 @@
             this.btnRepStaPage.ForeColor = System.Drawing.Color.White;
             this.btnRepStaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnRepStaPage.Image")));
             this.btnRepStaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRepStaPage.Location = new System.Drawing.Point(0, 545);
+            this.btnRepStaPage.Location = new System.Drawing.Point(0, 638);
             this.btnRepStaPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRepStaPage.Name = "btnRepStaPage";
             this.btnRepStaPage.Size = new System.Drawing.Size(349, 79);
@@ -281,10 +283,11 @@
             // 
             // panel8
             // 
-            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.BackgroundImage = global::GUI.Properties.Resources._4;
+            this.panel8.Location = new System.Drawing.Point(232, 56);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 100);
-            this.panel8.TabIndex = 0;
+            this.panel8.Size = new System.Drawing.Size(96, 104);
+            this.panel8.TabIndex = 4;
             // 
             // labelPriceTotal
             // 
@@ -319,10 +322,11 @@
             // 
             // panel7
             // 
-            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.BackgroundImage = global::GUI.Properties.Resources._1;
+            this.panel7.Location = new System.Drawing.Point(235, 56);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 100);
-            this.panel7.TabIndex = 0;
+            this.panel7.Size = new System.Drawing.Size(96, 104);
+            this.panel7.TabIndex = 3;
             // 
             // labelProduct
             // 
@@ -357,10 +361,11 @@
             // 
             // panel9
             // 
-            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.BackgroundImage = global::GUI.Properties.Resources._5;
+            this.panel9.Location = new System.Drawing.Point(235, 56);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(200, 100);
-            this.panel9.TabIndex = 0;
+            this.panel9.Size = new System.Drawing.Size(96, 104);
+            this.panel9.TabIndex = 4;
             // 
             // labelOrder
             // 
@@ -416,6 +421,23 @@
             this.label2.Size = new System.Drawing.Size(67, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "USER: ";
+            // 
+            // btnOrderManaPage
+            // 
+            this.btnOrderManaPage.FlatAppearance.BorderSize = 0;
+            this.btnOrderManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderManaPage.ForeColor = System.Drawing.Color.White;
+            this.btnOrderManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnOrderManaPage.Image")));
+            this.btnOrderManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderManaPage.Location = new System.Drawing.Point(0, 555);
+            this.btnOrderManaPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderManaPage.Name = "btnOrderManaPage";
+            this.btnOrderManaPage.Size = new System.Drawing.Size(349, 79);
+            this.btnOrderManaPage.TabIndex = 9;
+            this.btnOrderManaPage.Text = "    Order Management";
+            this.btnOrderManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrderManaPage.UseVisualStyleBackColor = true;
             // 
             // Frm_Dashboard
             // 
@@ -478,5 +500,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button btnOrderManaPage;
     }
 }

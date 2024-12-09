@@ -24,8 +24,25 @@ namespace GUI
             btnCusManaPage.Click += BtnCusManaPage_Click;
             btnCateManaPage.Click += BtnCateManaPage_Click;
             btnProManaPage.Click += BtnProManaPage_Click;
-
+            btnOrderManaPage.Click += BtnOrderManaPage_Click;
+            btnRepStaPage.Click += BtnRepStaPage_Click;
             Load();
+        }
+
+        private void BtnRepStaPage_Click(object sender, EventArgs e)
+        {
+            Frm_Report f = new Frm_Report();
+            OpenChildForm(f);
+            ClearButtonBackColor();
+            btnOrderManaPage.BackColor = Color.FromArgb(178, 8, 55);
+        }
+
+        private void BtnOrderManaPage_Click(object sender, EventArgs e)
+        {
+            Frm_OrdersManagement f = new Frm_OrdersManagement();
+            OpenChildForm(f);
+            ClearButtonBackColor();
+            btnOrderManaPage.BackColor = Color.FromArgb(178, 8, 55);
         }
 
         private void BtnProManaPage_Click(object sender, EventArgs e)
