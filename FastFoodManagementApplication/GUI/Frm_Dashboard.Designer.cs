@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.btnOrderManaPage = new System.Windows.Forms.Button();
             this.btnCusManaPage = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnRepStaPage = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnOrderManaPage = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -87,6 +87,23 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(349, 940);
             this.pnlSidebar.TabIndex = 0;
+            // 
+            // btnOrderManaPage
+            // 
+            this.btnOrderManaPage.FlatAppearance.BorderSize = 0;
+            this.btnOrderManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderManaPage.ForeColor = System.Drawing.Color.White;
+            this.btnOrderManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnOrderManaPage.Image")));
+            this.btnOrderManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderManaPage.Location = new System.Drawing.Point(0, 555);
+            this.btnOrderManaPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderManaPage.Name = "btnOrderManaPage";
+            this.btnOrderManaPage.Size = new System.Drawing.Size(349, 79);
+            this.btnOrderManaPage.TabIndex = 9;
+            this.btnOrderManaPage.Text = "    Order Management";
+            this.btnOrderManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrderManaPage.UseVisualStyleBackColor = true;
             // 
             // btnCusManaPage
             // 
@@ -421,23 +438,6 @@
             this.label2.Size = new System.Drawing.Size(67, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "USER: ";
-            // 
-            // btnOrderManaPage
-            // 
-            this.btnOrderManaPage.FlatAppearance.BorderSize = 0;
-            this.btnOrderManaPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderManaPage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderManaPage.ForeColor = System.Drawing.Color.White;
-            this.btnOrderManaPage.Image = ((System.Drawing.Image)(resources.GetObject("btnOrderManaPage.Image")));
-            this.btnOrderManaPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderManaPage.Location = new System.Drawing.Point(0, 555);
-            this.btnOrderManaPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnOrderManaPage.Name = "btnOrderManaPage";
-            this.btnOrderManaPage.Size = new System.Drawing.Size(349, 79);
-            this.btnOrderManaPage.TabIndex = 9;
-            this.btnOrderManaPage.Text = "    Order Management";
-            this.btnOrderManaPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOrderManaPage.UseVisualStyleBackColor = true;
             // 
             // Frm_Dashboard
             // 
