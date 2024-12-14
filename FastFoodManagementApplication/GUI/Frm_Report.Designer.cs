@@ -29,20 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fastFoodManagementDBDataSet = new GUI.FastFoodManagementDBDataSet();
             this.dateTimePickerTuNgay = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDenNgay = new System.Windows.Forms.DateTimePicker();
             this.buttonReport = new System.Windows.Forms.Button();
             this.buttonWord = new System.Windows.Forms.Button();
             this.buttonExcel = new System.Windows.Forms.Button();
-            this.fastFoodManagementDBDataSet = new GUI.FastFoodManagementDBDataSet();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter = new GUI.FastFoodManagementDBDataSetTableAdapters.ordersTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.fastFoodManagementDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fastFoodManagementDBDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "orders";
+            this.ordersBindingSource.DataSource = this.fastFoodManagementDBDataSet;
+            // 
+            // fastFoodManagementDBDataSet
+            // 
+            this.fastFoodManagementDBDataSet.DataSetName = "FastFoodManagementDBDataSet";
+            this.fastFoodManagementDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dateTimePickerTuNgay
             // 
@@ -93,16 +104,6 @@
             this.buttonExcel.UseVisualStyleBackColor = true;
             this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
             // 
-            // fastFoodManagementDBDataSet
-            // 
-            this.fastFoodManagementDBDataSet.DataSetName = "FastFoodManagementDBDataSet";
-            this.fastFoodManagementDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "orders";
-            this.ordersBindingSource.DataSource = this.fastFoodManagementDBDataSet;
-            // 
             // ordersTableAdapter
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
@@ -127,11 +128,14 @@
             // 
             // reportViewer1
             // 
+            reportDataSource1.Name = "Order";
+            reportDataSource1.Value = this.ordersBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.Report_Order.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(76, 101);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(905, 408);
+            this.reportViewer1.Size = new System.Drawing.Size(905, 540);
             this.reportViewer1.TabIndex = 0;
             // 
             // Frm_Report
@@ -139,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1085, 521);
+            this.ClientSize = new System.Drawing.Size(1103, 653);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExcel);
@@ -152,8 +156,8 @@
             this.Name = "Frm_Report";
             this.Text = "Frm_Report";
             this.Load += new System.EventHandler(this.Frm_Report_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fastFoodManagementDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fastFoodManagementDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

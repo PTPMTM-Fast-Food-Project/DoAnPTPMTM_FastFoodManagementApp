@@ -30,13 +30,13 @@ namespace DAL
                              customer_id = c.customer_id,
                          };
 
-            return orders.ToList(); // Ensure to return a List<OrderDTO>
+            return orders.ToList();
         }
         public List<OrderDTO> GetOrdersReport(DateTime datefrom, DateTime dateto)
         {
             var orders = from o in db.orders
                          join c in db.customers on o.customer_id equals c.customer_id
-                         where o.order_date >= datefrom && o.order_date <= dateto && o.is_accept == true && o.order_status == "Hoàn thành"
+                         where o.order_date >= datefrom && o.order_date <= dateto && o.is_accept == true && o.order_status == "Completed"
                          select new OrderDTO
                          {
                              order_id = o.order_id,
@@ -74,17 +74,90 @@ namespace DAL
                                where od.order_id == id
                                join p in db.products on od.product_id equals p.product_id
                                join c in db.categories on p.category_id equals c.category_id into categoryGroup
-                               from category in categoryGroup
+                               from category in categoryGroup.DefaultIfEmpty()
                                select new
                                {
                                    od.order_detail_id,
+                                   CategoryName = category != null ? category.name : "Không xác định",
                                    od.product_id,
                                    p.name,
+                                   od.quantity,
                                    p.cost_price,
-                                   CategoryName = category != null ? category.name : "Không xác định"
+                                   price = p.cost_price * od.quantity
+                                   
                                };
 
             return orderDetails;
+        }
+
+        public List<OrderDetailDTO> GetOrderDetailBill(int id)
+        {
+            var orderDetails = from od in db.order_details
+                               where od.order_id == id
+                               select new OrderDetailDTO
+                               {
+                                   order_detail_id = od.order_detail_id,
+                                   quantity = od.quantity,
+                               };
+
+            return orderDetails.ToList();
+        }
+
+        public CustomerDTO GetCustomerByOrderId(long orderId)
+        {
+            var customerInfo = (from o in db.orders
+                                join c in db.customers on o.customer_id equals c.customer_id
+                                where o.order_id == orderId
+                                select new CustomerDTO
+                                {
+                                    customer_id = c.customer_id,
+                                    first_name = c.first_name,
+                                    last_name = c.last_name,
+                                    address = c.address,
+                                    phone_number = c.phone_number,
+                                    username = c.username,
+                                    country = c.country
+                                }).SingleOrDefault();
+
+            return customerInfo;
+        }
+
+        public List<ProductDTO> GetProductBill(int orderId)
+        {
+            var products = from od in db.order_details
+                           where od.order_id == orderId
+                           join p in db.products on od.product_id equals p.product_id
+                           select new ProductDTO
+                           {
+                               product_id = p.product_id,
+                               name = p.name,
+                               cost_price = p.cost_price,
+                               quantity = od.quantity // Lấy quantity từ order_details
+                           };
+
+            return products.ToList(); // Trả về danh sách sản phẩm
+        }
+
+        public OrderDTO GetOrderById(long orderId)
+        {
+            var order = (from o in db.orders
+                         join c in db.customers on o.customer_id equals c.customer_id
+                         where o.order_id == orderId
+                         select new OrderDTO
+                         {
+                             order_id = o.order_id,
+                             delivery_date = o.delivery_date,
+                             is_accept = o.is_accept,
+                             order_date = o.order_date,
+                             order_status = o.order_status,
+                             payment_method = o.payment_method,
+                             quantity = o.quantity,
+                             tax = o.tax,
+                             total_price = o.total_price,
+                             customer_id = c.customer_id,
+                         }).SingleOrDefault();
+
+            return order;
         }
     }
 }
