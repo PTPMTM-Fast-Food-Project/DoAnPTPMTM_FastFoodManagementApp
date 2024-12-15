@@ -121,6 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerDTO.cs" />
     <Compile Include="FastFoodManagementDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,8 +129,10 @@
     </Compile>
     <Compile Include="LoginHelper.cs" />
     <Compile Include="LoginResult.cs" />
+    <Compile Include="OrderDetailDTO.cs" />
     <Compile Include="OrderDTO.cs" />
     <Compile Include="PasswordHelper.cs" />
+    <Compile Include="ProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

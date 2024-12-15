@@ -28,5 +28,21 @@ namespace BLL
         {
             return orderDAL.GetOrderDetailByOrderId(id);
         }
+        public CustomerDTO GetCustomerByOrderId(long orderId)
+        {
+            return orderDAL.GetCustomerByOrderId(orderId);
+        }
+        public List<OrderDetailDTO> GetOrderDetailBill(int id)
+        {
+            return orderDAL.GetOrderDetailBill(id);
+        }
+        public List<ProductDTO> GetProductBill(int orderId)
+        {
+            return orderDAL.GetProductBill(orderId);
+        }
+        public OrderDTO GetOrderById(long orderId)
+        {
+            return orderDAL.GetOrderById(orderId);
+        }
     }
 }
