@@ -62,6 +62,11 @@ namespace BLL
             return adminDAL.FindAllUsersByRoleNameIsNotAdmin();
         }
 
+        public role FindRoleNameByUsername(string username)
+        {
+            return adminDAL.FindRoleNameByUsername(username);
+        }
+
         public bool AuthorizeForUser(string username, long role)
         {
             admin a = adminDAL.FindAdminByUsername(username);

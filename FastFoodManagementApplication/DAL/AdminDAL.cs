@@ -94,6 +94,21 @@ namespace DAL
             return query;
         }
 
+        public role FindRoleNameByUsername(string username)
+        {
+            try
+            {
+                admin ad = FindAdminByUsername(username);
+                admin_role ar = db.admin_roles.FirstOrDefault(e => e.admin_id == ad.admin_id);
+                
+                return db.roles.FirstOrDefault(e => e.role_id == ar.role_id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public bool AuthorizeForUser(admin_role ar)
         {
             try

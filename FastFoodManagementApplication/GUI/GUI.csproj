@@ -332,14 +332,56 @@
     <Folder Include="Resources\Product\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\pizza1.jpg" />
+    <Content Include="Resources\pizza2.jpg" />
+    <Content Include="Resources\pizza3.jpg" />
+    <Content Include="Resources\pizza4.jpg" />
+    <Content Include="Resources\pizza5.jpg" />
+    <Content Include="Resources\pizza6.jpg" />
+    <Content Include="Resources\spaghetti1.jpg" />
+    <Content Include="Resources\spaghetti2.jpg" />
+    <Content Include="Resources\spaghetti3.jpg" />
+    <Content Include="Resources\spaghetti4.jpg" />
+    <Content Include="Resources\spaghetti5.jpg" />
+    <Content Include="Resources\spaghetti6.jpg" />
     <None Include="Resources\1.png" />
     <None Include="Resources\3.png" />
     <None Include="Resources\4.png" />
     <None Include="Resources\5.png" />
     <None Include="Resources\6.png" />
+    <Content Include="Resources\burger1.png" />
+    <Content Include="Resources\burger2.png" />
+    <Content Include="Resources\burger3.png" />
+    <Content Include="Resources\burger4.png" />
+    <Content Include="Resources\burger5.png" />
+    <Content Include="Resources\burger6.png" />
+    <Content Include="Resources\combo1.png" />
+    <Content Include="Resources\combo2.png" />
+    <Content Include="Resources\combo3.png" />
+    <Content Include="Resources\combo4.png" />
+    <Content Include="Resources\combo5.png" />
+    <Content Include="Resources\combo6.png" />
     <Content Include="Resources\configuration.png" />
+    <Content Include="Resources\dessert1.png" />
+    <Content Include="Resources\dessert2.png" />
+    <Content Include="Resources\dessert3.png" />
+    <Content Include="Resources\dessert4.png" />
+    <Content Include="Resources\dessert5.png" />
+    <Content Include="Resources\dessert6.png" />
+    <Content Include="Resources\drink1.png" />
+    <Content Include="Resources\drink2.png" />
+    <Content Include="Resources\drink3.png" />
+    <Content Include="Resources\drink4.png" />
+    <Content Include="Resources\drink5.png" />
+    <Content Include="Resources\drink6.png" />
     <Content Include="Resources\fast-food-login.jpg" />
     <Content Include="Resources\forgot-password.png" />
+    <Content Include="Resources\fried-chicken1.jpg" />
+    <Content Include="Resources\fried-chicken2.jpg" />
+    <Content Include="Resources\fried-chicken3.jpg" />
+    <Content Include="Resources\fried-chicken4.jpg" />
+    <Content Include="Resources\fried-chicken5.jpg" />
+    <Content Include="Resources\fried-chicken6.jpg" />
     <Content Include="Resources\on-off-button.png" />
   </ItemGroup>
   <ItemGroup>

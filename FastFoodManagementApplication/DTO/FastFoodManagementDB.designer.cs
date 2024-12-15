@@ -1860,6 +1860,8 @@ namespace DTO
 		
 		private System.Nullable<long> _product_id;
 		
+		private int _quantity;
+		
 		private EntityRef<order> _order;
 		
 		private EntityRef<product> _product;
@@ -1874,6 +1876,8 @@ namespace DTO
     partial void Onorder_idChanged();
     partial void Onproduct_idChanging(System.Nullable<long> value);
     partial void Onproduct_idChanged();
+    partial void OnquantityChanging(int value);
+    partial void OnquantityChanged();
     #endregion
 		
 		public order_detail()
@@ -1947,6 +1951,26 @@ namespace DTO
 					this._product_id = value;
 					this.SendPropertyChanged("product_id");
 					this.Onproduct_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Int NOT NULL")]
+		public int quantity
+		{
+			get
+			{
+				return this._quantity;
+			}
+			set
+			{
+				if ((this._quantity != value))
+				{
+					this.OnquantityChanging(value);
+					this.SendPropertyChanging();
+					this._quantity = value;
+					this.SendPropertyChanged("quantity");
+					this.OnquantityChanged();
 				}
 			}
 		}

@@ -175,7 +175,8 @@ namespace GUI
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string fileName = Path.GetFileName(openFileDialog.FileName); 
-                string targetDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources"); 
+                string targetDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
+                string targetDirectoryWeb = "D:\\Coding\\PTPMTM_2024_2025\\FFMApp_Project\\DoAnPTPMTM_FastFoodManagementApp\\Fast-Food-Project-main\\Customer\\src\\main\\resources\\static\\images\\product";
 
                 if (!Directory.Exists(targetDirectory))
                 {
@@ -183,8 +184,10 @@ namespace GUI
                 }
 
                 string targetPath = Path.Combine(targetDirectory, fileName);
+                string targetPathWeb = Path.Combine(targetDirectoryWeb, fileName);
 
                 File.Copy(openFileDialog.FileName, targetPath, true);
+                File.Copy(openFileDialog.FileName, targetPathWeb, true);
 
                 pbProductImage.ImageLocation = targetPath;
             }

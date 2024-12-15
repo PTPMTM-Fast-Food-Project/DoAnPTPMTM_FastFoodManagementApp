@@ -2,34 +2,113 @@ Menu_Inquiry	Có món gì hôm nay không?
 Menu_Inquiry	Cho tôi xem menu.
 Menu_Inquiry	Hôm nay có khuyến mãi không?
 Menu_Inquiry	Tôi muốn biết các món ăn nhanh nào đang có.
+Menu_Inquiry	Menu hôm nay có gì đặc biệt không?
+Menu_Inquiry	Bạn có bán pizza không?
+Menu_Inquiry	Có món mới nào không?
+Menu_Inquiry	Tôi muốn biết các món ăn có trong thực đơn.
+Menu_Inquiry	Có món nào không cay không?
+Menu_Inquiry	Cửa hàng có bán nước uống gì không?
+Menu_Inquiry	Có món tráng miệng không?
+Menu_Inquiry	Có combo tiết kiệm nào không?
+Menu_Inquiry	Menu có thay đổi gì hôm nay không?
 Order_Placement	Tôi muốn đặt một phần gà rán.
 Order_Placement	Làm sao để đặt món?
 Order_Placement	Đặt 2 cái pizza và 1 coca.
 Order_Placement	Tôi có thể đặt đồ ăn qua đây không?
+Order_Placement	Làm sao để đặt hàng?
+Order_Placement	Tôi có thể đặt đồ ăn như thế nào?
+Order_Placement	Tôi muốn đặt 3 phần gà rán.
+Order_Placement	Tôi cần đặt 2 phần pizza lớn.
+Order_Placement	Có thể đặt combo không?
+Order_Placement	Làm sao để thêm món vào giỏ hàng?
+Order_Placement	Cửa hàng có giao hàng tận nơi không?
+Order_Placement	Làm sao để huỷ đơn hàng?
+Order_Placement	Tôi muốn đặt hàng qua điện thoại được không?
+Order_Placement	Có chương trình đặt hàng qua app không?
 Delivery_Time_Inquiry	Thức ăn sẽ giao trong bao lâu?
 Delivery_Time_Inquiry	Khi nào đồ ăn tới?
 Delivery_Time_Inquiry	Giao hàng mất bao nhiêu thời gian?
 Delivery_Time_Inquiry	Tôi cần biết thời gian giao hàng.
+Delivery_Time_Inquiry	Khi nào đơn hàng của tôi sẽ đến?
+Delivery_Time_Inquiry	Tôi có thể nhận hàng trong vòng bao lâu?
+Delivery_Time_Inquiry	Giao hàng nhanh nhất là bao lâu?
+Delivery_Time_Inquiry	Có giao hàng trong ngày không?
+Delivery_Time_Inquiry	Giao hàng mất khoảng bao lâu?
+Delivery_Time_Inquiry	Có dịch vụ giao hàng nhanh không?
+Delivery_Time_Inquiry	Có thể giao trong vòng 20 phút không?
+Delivery_Time_Inquiry	Giao hàng miễn phí trong bao xa?
+Delivery_Time_Inquiry	Tôi muốn nhận hàng trong vòng 1 giờ.
+Delivery_Time_Inquiry	Đơn hàng có thể đến trước 12h không?
 Payment_Method_Inquiry	Tôi có thể thanh toán bằng thẻ không?
 Payment_Method_Inquiry	Hình thức thanh toán là gì?
 Payment_Method_Inquiry	Chỗ bạn có hỗ trợ trả tiền mặt không?
 Payment_Method_Inquiry	Thanh toán online như thế nào?
+Payment_Method_Inquiry	Có thể trả bằng thẻ Visa không?
+Payment_Method_Inquiry	Có hỗ trợ thanh toán qua Paypal không?
+Payment_Method_Inquiry	Có thể thanh toán qua ví điện tử nào?
+Payment_Method_Inquiry	Cửa hàng có hỗ trợ trả góp không?
+Payment_Method_Inquiry	Thanh toán bằng QR code được không?
+Payment_Method_Inquiry	Có thể thanh toán khi nhận hàng không?
+Payment_Method_Inquiry	Thanh toán qua chuyển khoản như thế nào?
+Payment_Method_Inquiry	Cửa hàng có chấp nhận Mastercard không?
+Payment_Method_Inquiry	Làm sao để hoàn tiền nếu thanh toán online?
+Payment_Method_Inquiry	Có thể trả tiền trước không?
 Order_Status_Inquiry	Đơn hàng của tôi đâu rồi?
 Order_Status_Inquiry	Kiểm tra trạng thái đơn hàng.
 Order_Status_Inquiry	Đơn của tôi đã giao chưa?
 Order_Status_Inquiry	Tôi muốn biết trạng thái đơn hàng của mình.
+Order_Status_Inquiry	Làm sao để kiểm tra đơn hàng của tôi?
+Order_Status_Inquiry	Đơn hàng có giao đúng giờ không?
+Order_Status_Inquiry	Tôi muốn biết đơn hàng có giao chưa.
+Order_Status_Inquiry	Đơn hàng đang ở đâu rồi?
+Order_Status_Inquiry	Làm sao để tra cứu đơn hàng?
+Order_Status_Inquiry	Tôi có thể hủy đơn hàng không?
+Order_Status_Inquiry	Cửa hàng có gửi thông báo khi đơn hàng đến không?
+Order_Status_Inquiry	Có thể kiểm tra trạng thái đơn hàng online không?
+Order_Status_Inquiry	Cửa hàng có cập nhật trạng thái qua SMS không?
+Order_Status_Inquiry	Đơn hàng của tôi bị trễ, làm sao bây giờ?
 Product_Recommendation	Món nào ngon nhất ở đây?
 Product_Recommendation	Bạn gợi ý món ăn nào đi.
 Product_Recommendation	Món nào đang được yêu thích nhất?
 Product_Recommendation	Tôi không biết chọn món nào, bạn giúp nhé.
+Product_Recommendation	Có món nào ngon nhất không?
+Product_Recommendation	Bạn gợi ý món nào cho bữa tối?
+Product_Recommendation	Món nào phù hợp cho trẻ em?
+Product_Recommendation	Tôi muốn thử món đặc biệt nhất.
+Product_Recommendation	Có món ăn nhẹ nào không?
+Product_Recommendation	Cửa hàng có món tráng miệng ngon không?
+Product_Recommendation	Món nào đang giảm giá vậy?
+Product_Recommendation	Có món nào cho người ăn chay không?
+Product_Recommendation	Món nào phù hợp cho bữa sáng?
+Product_Recommendation	Bạn có món ăn kèm nào không?
 Store_Locations_Inquiry	Chi nhánh gần nhất ở đâu?
 Store_Locations_Inquiry	Tôi muốn tìm cửa hàng của bạn.
 Store_Locations_Inquiry	Làm sao để đến cửa hàng?
 Store_Locations_Inquiry	Cửa hàng ở đâu?
+Store_Locations_Inquiry	Có cửa hàng nào gần đây không?
+Store_Locations_Inquiry	Làm sao để tìm cửa hàng gần nhất?
+Store_Locations_Inquiry	Cửa hàng có ở quận 1 không?
+Store_Locations_Inquiry	Làm sao để đến cửa hàng nhanh nhất?
+Store_Locations_Inquiry	Cửa hàng có ở trung tâm thương mại không?
+Store_Locations_Inquiry	Có dịch vụ giao hàng tận nơi không?
+Store_Locations_Inquiry	Cửa hàng mở cửa từ mấy giờ?
+Store_Locations_Inquiry	Có thể đặt món tại cửa hàng không?
+Store_Locations_Inquiry	Cửa hàng có bãi đỗ xe không?
+Store_Locations_Inquiry	Tôi có thể đặt món và nhận tại cửa hàng không?
 Feedback_or_Complaint	Đồ ăn giao chậm quá.
 Feedback_or_Complaint	Tôi muốn gửi ý kiến đóng góp.
 Feedback_or_Complaint	Có chỗ nào để phản hồi không?
 Feedback_or_Complaint	Đơn hàng bị sai rồi.
+Feedback_or_Complaint	Đơn hàng của tôi bị sai món.
+Feedback_or_Complaint	Tôi muốn khiếu nại về dịch vụ.
+Feedback_or_Complaint	Món ăn bị nguội.
+Feedback_or_Complaint	Tôi không hài lòng với chất lượng món ăn.
+Feedback_or_Complaint	Dịch vụ giao hàng quá chậm.
+Feedback_or_Complaint	Tôi muốn gửi phản hồi về đơn hàng vừa nhận.
+Feedback_or_Complaint	Có nơi nào để khiếu nại không?
+Feedback_or_Complaint	Làm sao để gửi ý kiến đóng góp?
+Feedback_or_Complaint	Tôi không thích dịch vụ ở cửa hàng.
+Feedback_or_Complaint	Đồ ăn bị thiếu món rồi!
 Promotion_Inquiry	Hôm nay có khuyến mãi gì không?
 Promotion_Inquiry	Chỗ bạn có giảm giá không?
 Promotion_Inquiry	Có chương trình ưu đãi nào không?

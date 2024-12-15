@@ -15,7 +15,9 @@ namespace GUI
     public partial class Frm_Dashboard : Form
     {
         private DashboardBLL dashboardBLL = new DashboardBLL();
+        private AdminBLL adminBLL = new AdminBLL();
         private OrderBLL orderBLL = new OrderBLL();
+        public role Role { get; set; }
         public Frm_Dashboard()
         {
             InitializeComponent();
@@ -31,10 +33,18 @@ namespace GUI
 
         private void BtnRepStaPage_Click(object sender, EventArgs e)
         {
-            Frm_Report f = new Frm_Report();
-            OpenChildForm(f);
-            ClearButtonBackColor();
-            btnOrderManaPage.BackColor = Color.FromArgb(178, 8, 55);
+            if (Role.name.Equals("ADMIN"))
+            {
+                Frm_Report f = new Frm_Report();
+                OpenChildForm(f);
+                ClearButtonBackColor();
+                btnOrderManaPage.BackColor = Color.FromArgb(178, 8, 55);
+            }
+            else
+            {
+                btnRepStaPage.Enabled = false;
+            }    
+            
         }
 
         private void BtnOrderManaPage_Click(object sender, EventArgs e)
@@ -47,10 +57,17 @@ namespace GUI
 
         private void BtnProManaPage_Click(object sender, EventArgs e)
         {
-            Frm_ProductsManagement f = new Frm_ProductsManagement();
-            OpenChildForm(f);
-            ClearButtonBackColor();
-            btnProManaPage.BackColor = Color.FromArgb(178, 8, 55);
+            if (Role.name.Equals("ADMIN"))
+            {
+                Frm_ProductsManagement f = new Frm_ProductsManagement();
+                OpenChildForm(f);
+                ClearButtonBackColor();
+                btnProManaPage.BackColor = Color.FromArgb(178, 8, 55);
+            }
+            else
+            {
+                btnProManaPage.Enabled = false;
+            }    
         }
 
         private void BtnCateManaPage_Click(object sender, EventArgs e)
@@ -71,10 +88,17 @@ namespace GUI
 
         private void BtnEmpManaPage_Click(object sender, EventArgs e)
         {
-            Frm_EmployeesManagement f = new Frm_EmployeesManagement();
-            OpenChildForm(f);
-            ClearButtonBackColor();
-            btnEmpManaPage.BackColor = Color.FromArgb(178, 8, 55);
+            if (Role.name.Equals("ADMIN"))
+            {
+                Frm_EmployeesManagement f = new Frm_EmployeesManagement();
+                OpenChildForm(f);
+                ClearButtonBackColor();
+                btnEmpManaPage.BackColor = Color.FromArgb(178, 8, 55);
+            }
+            else
+            {
+                btnEmpManaPage.Enabled = false;
+            }    
         }
 
         private void ClearButtonBackColor()
@@ -121,6 +145,7 @@ namespace GUI
         public void SetUsername(string username)
         {
             lblUsername.Text += username;
+            Role = this.adminBLL.FindRoleNameByUsername(username);
         }
         private void Load()
         {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FastFoodManagementDB" Class="FastFoodManagementDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HOANG-KHANG\SQLSRV_KHANG;Initial Catalog=FastFoodManagementDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="FastFoodManagementDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HOANG-KHANG\SQLSRV_KHANG;Initial Catalog=FastFoodManagementDB;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="FastFoodManagementDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.admin_roles" Member="admin_roles">
     <Type Name="admin_role">
       <Column Name="admin_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -85,6 +85,7 @@
       <Column Name="order_detail_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="order_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="product_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="order_order_detail" Member="order" ThisKey="order_id" OtherKey="order_id" Type="order" IsForeignKey="true" />
       <Association Name="product_order_detail" Member="product" ThisKey="product_id" OtherKey="product_id" Type="product" IsForeignKey="true" />
     </Type>

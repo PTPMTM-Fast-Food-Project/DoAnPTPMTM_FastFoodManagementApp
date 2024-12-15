@@ -31,9 +31,9 @@ namespace GUI
             comboBoxIsAccept.Items.Add("True");
             comboBoxIsAccept.Items.Add("False");
 
-            comboBoxStatus.Items.Add("Đang xử lý");
-            comboBoxStatus.Items.Add("Hoàn thành");
-            comboBoxStatus.Items.Add("Đã giao");
+            comboBoxStatus.Items.Add("PENDING");
+            comboBoxStatus.Items.Add("SHIPPING");
+            comboBoxStatus.Items.Add("COMPLETE");
         }
 
         private void LoadOrders()
@@ -73,7 +73,7 @@ namespace GUI
             if (dataGridView1.CurrentRow != null)
             {
                 textBoxId.Text = dataGridView1.CurrentRow.Cells["order_id"].Value.ToString();
-                textBoxDeliveryDate.Text = dataGridView1.CurrentRow.Cells["delivery_date"].Value.ToString();
+                textBoxDeliveryDate.Text = dataGridView1.CurrentRow.Cells["delivery_date"].Value != null ? dataGridView1.CurrentRow.Cells["delivery_date"].Value.ToString() : string.Empty;
                 comboBoxIsAccept.SelectedItem = dataGridView1.CurrentRow.Cells["is_accept"].Value.ToString();
                 textBoxOrderDate.Text = dataGridView1.CurrentRow.Cells["order_date"].Value.ToString();
                 comboBoxStatus.Text = dataGridView1.CurrentRow.Cells["order_status"].Value.ToString();
